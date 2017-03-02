@@ -22,38 +22,14 @@ public class Movement : MonoBehaviour {
     // Update is called once per frame
     public void move()
     {
-
-
-        //Swingy movement
-        //if (rb.velocity.magnitude < max_vel && horiz != 0 || vert != 0)
-        //{
-        //    rb.velocity += new Vector2(horiz, 0) * Time.deltaTime;
-        //    rb.velocity += new Vector2(0, vert) * Time.deltaTime;
-        //}
-        //if(rb.velocity.magnitude < max_vel && horiz != 0)
-        //{
-        //    rb.velocity +=
-        //}
-        //else if (rb.velocity.magnitude > vel_deadzone)
-        //    rb.velocity -= new Vector2(rb.velocity.x / drag, rb.velocity.y / drag) * Time.deltaTime;
-        //else
-        //    rb.velocity = Vector2.zero;
-
-
-        if (rb.velocity.magnitude < max_vel && horiz != 0)
-            rb.velocity = new Vector2(horiz, rb.velocity.y) ;
-        else if (rb.velocity.x < vel_deadzone && rb.velocity.x > -vel_deadzone)
+        if (horiz != 0)
+            rb.velocity = new Vector2(max_vel * horiz, rb.velocity.y);
+        else
             rb.velocity = new Vector2(0, rb.velocity.y);
-        else if (rb.velocity.x != 0 && horiz == 0)
-            rb.velocity -= new Vector2(horiz / drag, 0);
-
-        if (rb.velocity.magnitude < max_vel && vert != 0)
-            rb.velocity = new Vector2(rb.velocity.x, vert);
-        else if (rb.velocity.y < vel_deadzone && rb.velocity.y > -vel_deadzone)
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-        else if (rb.velocity.y != 0 && vert == 0)
-            rb.velocity -= new Vector2(0, vert / drag);
-        
+        if (vert != 0)
+            rb.velocity = new Vector2(rb.velocity.x, max_vel * vert);
+        else
+            rb.velocity = new Vector2(rb.velocity.x, 0);    
     }
 
     public void set_speed(float horizontal, float vertical)
