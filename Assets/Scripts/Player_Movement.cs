@@ -21,9 +21,16 @@ public class Player_Movement : Movement{
     void Update () {
         float horiz = Input.GetAxis("Horizontal");
         if (horiz > 0)
+        {
             facing_left = false;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
         else if (horiz < 0)
+        {
             facing_left = true;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+
         set_speed(horiz, Input.GetAxis("Vertical"));
         move();
 
@@ -42,6 +49,12 @@ public class Player_Movement : Movement{
     {
         if (c.CompareTag("Box"))
             holdable_object = c.gameObject;
+    }
+    void OnTriggerExit2D(Collider2D c)
+    {
+        if(!holding)
+            if (c.gameObject == holdable_object)
+                holdable_object = null;
     }
 
     void pickup_item(GameObject obj)
