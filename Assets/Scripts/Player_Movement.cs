@@ -70,10 +70,18 @@ public class Player_Movement : Movement{
     void drop_item(GameObject obj)
     {
         obj.transform.parent = null;
+        Vector3 new_pos = obj.transform.position;
         if (facing_left)
-            obj.transform.position -= new Vector3(0.75f, 0, 0);
+            new_pos -= new Vector3(0.75f, 0, 0);
         else
-            obj.transform.position += new Vector3(0.75f, 0, 0);
+            new_pos += new Vector3(0.75f, 0, 0);
+        RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
+        if(search.transform == null)
+            obj.transform.position = new_pos;
+        else if (search.transform.tag == "Truck") ;
+        ///////////////////////////////////////////PLACE IN TRUCK FUNCTION//////////////////////////////////////
+        else
+            obj.transform.position = gameObject.transform.position;
         holding = false;
         holdable_object = null;
     }
