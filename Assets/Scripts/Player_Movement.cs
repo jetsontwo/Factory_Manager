@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player_Movement : Movement{
 
 
-    public float acceleration, drag, max_vel, vel_deadzone;
+    public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
     private Rigidbody2D rb;
     private GameObject holdable_object = null;
-    private bool holding = false;
+    private bool holding = false, facing_left = true;
 
     // Use this for initialization
     void Start()
@@ -19,7 +19,12 @@ public class Player_Movement : Movement{
 
     // Update is called once per frame
     void Update () {
-        set_speed(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        float horiz = Input.GetAxis("Horizontal");
+        if (horiz > 0)
+            facing_left = false;
+        else if (horiz < 0)
+            facing_left = true;
+        set_speed(horiz, Input.GetAxis("Vertical"));
         move();
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -37,23 +42,27 @@ public class Player_Movement : Movement{
     {
         if (c.CompareTag("Box"))
             holdable_object = c.gameObject;
-        print("jasdfklj");
     }
 
     void pickup_item(GameObject obj)
     {
         obj.transform.parent = gameObject.transform;
-        obj.transform.position = new Vector3(gameObject.transform.position.x - 0.2f, gameObject.transform.position.y, 0);
+        if (facing_left)
+            obj.transform.position = new Vector3(gameObject.transform.position.x - held_object_offset, gameObject.transform.position.y, 0);
+        else
+            obj.transform.position = new Vector3(gameObject.transform.position.x + held_object_offset, gameObject.transform.position.y, 0);
         holding = true;
     }
 
     void drop_item(GameObject obj)
     {
         obj.transform.parent = null;
+        if (facing_left)
+            obj.transform.position -= new Vector3(0.75f, 0, 0);
+        else
+            obj.transform.position += new Vector3(0.75f, 0, 0);
         holding = false;
         holdable_object = null;
     }
-
-
 
 }
