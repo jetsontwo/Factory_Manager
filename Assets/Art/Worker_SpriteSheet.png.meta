@@ -1,0 +1,3576 @@
+fileFormatVersion: 2
+guid: 56d227c82213a254d87684b1292bab87
+timeCreated: 1488445918
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Worker_SpriteSheet_0
+    21300002: Worker_SpriteSheet_1
+    21300004: Worker_SpriteSheet_2
+    21300006: Worker_SpriteSheet_3
+    21300008: Worker_SpriteSheet_4
+    21300010: Worker_SpriteSheet_5
+    21300012: Worker_SpriteSheet_6
+    21300014: Worker_SpriteSheet_7
+    21300016: Worker_SpriteSheet_8
+    21300018: Worker_SpriteSheet_9
+    21300020: Worker_SpriteSheet_10
+    21300022: Worker_SpriteSheet_11
+    21300024: Worker_SpriteSheet_12
+    21300026: Worker_SpriteSheet_13
+    21300028: Worker_SpriteSheet_14
+    21300030: Worker_SpriteSheet_15
+    21300032: Worker_SpriteSheet_16
+    21300034: Worker_SpriteSheet_17
+    21300036: Worker_SpriteSheet_18
+    21300038: Worker_SpriteSheet_19
+    21300040: Worker_SpriteSheet_20
+    21300042: Worker_SpriteSheet_21
+    21300044: Worker_SpriteSheet_22
+    21300046: Worker_SpriteSheet_23
+    21300048: Worker_SpriteSheet_24
+    21300050: Worker_SpriteSheet_25
+    21300052: Worker_SpriteSheet_26
+    21300054: Worker_SpriteSheet_27
+    21300056: Worker_SpriteSheet_28
+    21300058: Worker_SpriteSheet_29
+    21300060: Worker_SpriteSheet_30
+    21300062: Worker_SpriteSheet_31
+    21300064: Worker_SpriteSheet_32
+    21300066: Worker_SpriteSheet_33
+    21300068: Worker_SpriteSheet_34
+    21300070: Worker_SpriteSheet_35
+    21300072: Worker_SpriteSheet_36
+    21300074: Worker_SpriteSheet_37
+    21300076: Worker_SpriteSheet_38
+    21300078: Worker_SpriteSheet_39
+    21300080: Worker_SpriteSheet_40
+    21300082: Worker_SpriteSheet_41
+    21300084: Worker_SpriteSheet_42
+    21300086: Worker_SpriteSheet_43
+    21300088: Worker_SpriteSheet_44
+    21300090: Worker_SpriteSheet_45
+    21300092: Worker_SpriteSheet_46
+    21300094: Worker_SpriteSheet_47
+    21300096: Worker_SpriteSheet_48
+    21300098: Worker_SpriteSheet_49
+    21300100: Worker_SpriteSheet_50
+    21300102: Worker_SpriteSheet_51
+    21300104: Worker_SpriteSheet_52
+    21300106: Worker_SpriteSheet_53
+    21300108: Worker_SpriteSheet_54
+    21300110: Worker_SpriteSheet_55
+    21300112: Worker_SpriteSheet_56
+    21300114: Worker_SpriteSheet_57
+    21300116: Worker_SpriteSheet_58
+    21300118: Worker_SpriteSheet_59
+    21300120: Worker_SpriteSheet_60
+    21300122: Worker_SpriteSheet_61
+    21300124: Worker_SpriteSheet_62
+    21300126: Worker_SpriteSheet_63
+    21300128: Worker_SpriteSheet_64
+    21300130: Worker_SpriteSheet_65
+    21300132: Worker_SpriteSheet_66
+    21300134: Worker_SpriteSheet_67
+    21300136: Worker_SpriteSheet_68
+    21300138: Worker_SpriteSheet_69
+    21300140: Worker_SpriteSheet_70
+    21300142: Worker_SpriteSheet_71
+    21300144: Worker_SpriteSheet_72
+    21300146: Worker_SpriteSheet_73
+    21300148: Worker_SpriteSheet_74
+    21300150: Worker_SpriteSheet_75
+    21300152: Worker_SpriteSheet_76
+    21300154: Worker_SpriteSheet_77
+    21300156: Worker_SpriteSheet_78
+    21300158: Worker_SpriteSheet_79
+    21300160: Worker_SpriteSheet_80
+    21300162: Worker_SpriteSheet_81
+    21300164: Worker_SpriteSheet_82
+    21300166: Worker_SpriteSheet_83
+    21300168: Worker_SpriteSheet_84
+    21300170: Worker_SpriteSheet_85
+    21300172: Worker_SpriteSheet_86
+    21300174: Worker_SpriteSheet_87
+    21300176: Worker_SpriteSheet_88
+    21300178: Worker_SpriteSheet_89
+    21300180: Worker_SpriteSheet_90
+    21300182: Worker_SpriteSheet_91
+    21300184: Worker_SpriteSheet_92
+    21300186: Worker_SpriteSheet_93
+    21300188: Worker_SpriteSheet_94
+    21300190: Worker_SpriteSheet_95
+    21300192: Worker_SpriteSheet_96
+    21300194: Worker_SpriteSheet_97
+    21300196: Worker_SpriteSheet_98
+    21300198: Worker_SpriteSheet_99
+    21300200: Worker_SpriteSheet_100
+    21300202: Worker_SpriteSheet_101
+    21300204: Worker_SpriteSheet_102
+    21300206: Worker_SpriteSheet_103
+    21300208: Worker_SpriteSheet_104
+    21300210: Worker_SpriteSheet_105
+    21300212: Worker_SpriteSheet_106
+    21300214: Worker_SpriteSheet_107
+    21300216: Worker_SpriteSheet_108
+    21300218: Worker_SpriteSheet_109
+    21300220: Worker_SpriteSheet_110
+    21300222: Worker_SpriteSheet_111
+    21300224: Worker_SpriteSheet_112
+    21300226: Worker_SpriteSheet_113
+    21300228: Worker_SpriteSheet_114
+    21300230: Worker_SpriteSheet_115
+    21300232: Worker_SpriteSheet_116
+    21300234: Worker_SpriteSheet_117
+    21300236: Worker_SpriteSheet_118
+    21300238: Worker_SpriteSheet_119
+    21300240: Worker_SpriteSheet_120
+    21300242: Worker_SpriteSheet_121
+    21300244: Worker_SpriteSheet_122
+    21300246: Worker_SpriteSheet_123
+    21300248: Worker_SpriteSheet_124
+    21300250: Worker_SpriteSheet_125
+    21300252: Worker_SpriteSheet_126
+    21300254: Worker_SpriteSheet_127
+    21300256: Worker_SpriteSheet_128
+    21300258: Worker_SpriteSheet_129
+    21300260: Worker_SpriteSheet_130
+    21300262: Worker_SpriteSheet_131
+    21300264: Worker_SpriteSheet_132
+    21300266: Worker_SpriteSheet_133
+    21300268: Worker_SpriteSheet_134
+    21300270: Worker_SpriteSheet_135
+    21300272: Worker_SpriteSheet_136
+    21300274: Worker_SpriteSheet_137
+    21300276: Worker_SpriteSheet_138
+    21300278: Worker_SpriteSheet_139
+    21300280: Worker_SpriteSheet_140
+    21300282: Worker_SpriteSheet_141
+    21300284: Worker_SpriteSheet_142
+    21300286: Worker_SpriteSheet_143
+    21300288: Worker_SpriteSheet_144
+    21300290: Worker_SpriteSheet_145
+    21300292: Worker_SpriteSheet_146
+    21300294: Worker_SpriteSheet_147
+    21300296: Worker_SpriteSheet_148
+    21300298: Worker_SpriteSheet_149
+    21300300: Worker_SpriteSheet_150
+    21300302: Worker_SpriteSheet_151
+    21300304: Worker_SpriteSheet_152
+    21300306: Worker_SpriteSheet_153
+    21300308: Worker_SpriteSheet_154
+    21300310: Worker_SpriteSheet_155
+    21300312: Worker_SpriteSheet_156
+    21300314: Worker_SpriteSheet_157
+    21300316: Worker_SpriteSheet_158
+    21300318: Worker_SpriteSheet_159
+    21300320: Worker_SpriteSheet_160
+    21300322: Worker_SpriteSheet_161
+    21300324: Worker_SpriteSheet_162
+    21300326: Worker_SpriteSheet_163
+    21300328: Worker_SpriteSheet_164
+    21300330: Worker_SpriteSheet_165
+    21300332: Worker_SpriteSheet_166
+    21300334: Worker_SpriteSheet_167
+    21300336: Worker_SpriteSheet_168
+    21300338: Worker_SpriteSheet_169
+    21300340: Worker_SpriteSheet_170
+    21300342: Worker_SpriteSheet_171
+    21300344: Worker_SpriteSheet_172
+    21300346: Worker_SpriteSheet_173
+    21300348: Worker_SpriteSheet_174
+    21300350: Worker_SpriteSheet_175
+    21300352: Worker_SpriteSheet_176
+    21300354: Worker_SpriteSheet_177
+    21300356: Worker_SpriteSheet_178
+    21300358: Worker_SpriteSheet_179
+    21300360: Worker_SpriteSheet_180
+    21300362: Worker_SpriteSheet_181
+    21300364: Worker_SpriteSheet_182
+    21300366: Worker_SpriteSheet_183
+    21300368: Worker_SpriteSheet_184
+    21300370: Worker_SpriteSheet_185
+    21300372: Worker_SpriteSheet_186
+    21300374: Worker_SpriteSheet_187
+    21300376: Worker_SpriteSheet_188
+    21300378: Worker_SpriteSheet_189
+    21300380: Worker_SpriteSheet_190
+    21300382: Worker_SpriteSheet_191
+    21300384: Worker_SpriteSheet_192
+    21300386: Worker_SpriteSheet_193
+    21300388: Worker_SpriteSheet_194
+    21300390: Worker_SpriteSheet_195
+    21300392: Worker_SpriteSheet_196
+    21300394: Worker_SpriteSheet_197
+    21300396: Worker_SpriteSheet_198
+    21300398: Worker_SpriteSheet_199
+    21300400: Worker_SpriteSheet_200
+    21300402: Worker_SpriteSheet_201
+    21300404: Worker_SpriteSheet_202
+    21300406: Worker_SpriteSheet_203
+    21300408: Worker_SpriteSheet_204
+    21300410: Worker_SpriteSheet_205
+    21300412: Worker_SpriteSheet_206
+    21300414: Worker_SpriteSheet_207
+    21300416: Worker_SpriteSheet_208
+    21300418: Worker_SpriteSheet_209
+    21300420: Worker_SpriteSheet_210
+    21300422: Worker_SpriteSheet_211
+    21300424: Worker_SpriteSheet_212
+    21300426: Worker_SpriteSheet_213
+    21300428: Worker_SpriteSheet_214
+    21300430: Worker_SpriteSheet_215
+    21300432: Worker_SpriteSheet_216
+    21300434: Worker_SpriteSheet_217
+    21300436: Worker_SpriteSheet_218
+    21300438: Worker_SpriteSheet_219
+    21300440: Worker_SpriteSheet_220
+    21300442: Worker_SpriteSheet_221
+    21300444: Worker_SpriteSheet_222
+    21300446: Worker_SpriteSheet_223
+    21300448: Worker_SpriteSheet_224
+    21300450: Worker_SpriteSheet_225
+    21300452: Worker_SpriteSheet_226
+    21300454: Worker_SpriteSheet_227
+    21300456: Worker_SpriteSheet_228
+    21300458: Worker_SpriteSheet_229
+    21300460: Worker_SpriteSheet_230
+    21300462: Worker_SpriteSheet_231
+    21300464: Worker_SpriteSheet_232
+    21300466: Worker_SpriteSheet_233
+    21300468: Worker_SpriteSheet_234
+    21300470: Worker_SpriteSheet_235
+    21300472: Worker_SpriteSheet_236
+    21300474: Worker_SpriteSheet_237
+    21300476: Worker_SpriteSheet_238
+    21300478: Worker_SpriteSheet_239
+    21300480: Worker_SpriteSheet_240
+    21300482: Worker_SpriteSheet_241
+    21300484: Worker_SpriteSheet_242
+    21300486: Worker_SpriteSheet_243
+    21300488: Worker_SpriteSheet_244
+    21300490: Worker_SpriteSheet_245
+    21300492: Worker_SpriteSheet_246
+    21300494: Worker_SpriteSheet_247
+    21300496: Worker_SpriteSheet_248
+    21300498: Worker_SpriteSheet_249
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 450
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 400
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 350
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 300
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 250
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 200
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 150
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 100
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 50
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_231
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_232
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_233
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_234
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_235
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_236
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_237
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_238
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_239
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_240
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_241
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_242
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_243
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_244
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_245
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_246
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_247
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_248
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_SpriteSheet_249
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
