@@ -6,15 +6,13 @@ public class Player_Movement : Movement{
 
 
     public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
-    private Rigidbody2D rb;
     private GameObject holdable_object = null;
     private bool holding = false, facing_left = true;
 
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        setup(rb, acceleration, drag, max_vel, vel_deadzone);
+        setup(GetComponent<Rigidbody2D>(), acceleration, drag, max_vel, vel_deadzone);
     }
 
     // Update is called once per frame
@@ -72,9 +70,9 @@ public class Player_Movement : Movement{
         obj.transform.parent = null;
         Vector3 new_pos = obj.transform.position;
         if (facing_left)
-            new_pos -= new Vector3(0.75f, 0, 0);
+            new_pos -= new Vector3(0.3f, 0, 0);
         else
-            new_pos += new Vector3(0.75f, 0, 0);
+            new_pos += new Vector3(0.3f, 0, 0);
         RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
         if(search.transform == null)
             obj.transform.position = new_pos;
