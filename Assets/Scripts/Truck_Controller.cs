@@ -31,7 +31,7 @@ public class Truck_Controller : MonoBehaviour {
     {
         if (current.sprite != uncovered)
             current.sprite = uncovered;
-        if(cur_boxes_index < (spaces_x * spaces_y))
+        if (cur_boxes_index < (spaces_x * spaces_y))
         {
             box.transform.parent = gameObject.transform;
 
@@ -41,6 +41,8 @@ public class Truck_Controller : MonoBehaviour {
             box.transform.position = new Vector2(init_location.x - (x_offset * x_space), init_location.y - (y_offset * y_space));
             cur_boxes_index++;
         }
+        else
+            send();
     }
 
     public void send()
@@ -78,7 +80,7 @@ public class Truck_Controller : MonoBehaviour {
 
             yield return new WaitForSeconds(0.1f);
         }
-        if (transform.position.x < original)
+        if (transform.position.x != original)
             transform.position = new Vector3(original, transform.position.y, 0);
         rb.velocity = Vector2.zero;
 

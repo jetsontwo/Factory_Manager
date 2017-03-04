@@ -6,12 +6,15 @@ public class Player_Movement : Movement{
 
 
     public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
+    private AudioSource source;
+    public AudioClip pick_up, drop;
     private GameObject holdable_object = null;
     private bool holding = false, facing_left = true;
 
     // Use this for initialization
     void Start()
     {
+        source = GetComponent<AudioSource>();
         setup(GetComponent<Rigidbody2D>(), acceleration, drag, max_vel, vel_deadzone);
     }
 
@@ -57,6 +60,8 @@ public class Player_Movement : Movement{
 
     void pickup_item(GameObject obj)
     {
+        source.clip = pick_up;
+        source.Play();
         obj.transform.parent = gameObject.transform;
         if (facing_left)
             obj.transform.position = new Vector3(gameObject.transform.position.x - held_object_offset, gameObject.transform.position.y, 0);
@@ -67,6 +72,8 @@ public class Player_Movement : Movement{
 
     void drop_item(GameObject obj)
     {
+        source.clip = drop;
+        source.Play();
         obj.transform.parent = null;
         Vector3 new_pos = obj.transform.position;
         if (facing_left)
