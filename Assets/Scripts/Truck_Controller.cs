@@ -5,6 +5,8 @@ using UnityEngine;
 public class Truck_Controller : MonoBehaviour {
 
     public int spaces_x, spaces_y;
+    public Sprite covered, uncovered;
+    private SpriteRenderer current;
     public SpriteRenderer load_spot;
     public float x_space, y_space, max_vel, accel, wait_time;
     private int cur_boxes_index = 0;
@@ -19,6 +21,7 @@ public class Truck_Controller : MonoBehaviour {
         init_location = new Vector2(transform.position.x + 2.35f, transform.position.y + 0.5f);
         boxes = new GameObject[spaces_x * spaces_y];
         rb = GetComponent<Rigidbody2D>();
+        current = GetComponent<SpriteRenderer>();
         original = transform.position.x;
         target_x = original + 20;
 
@@ -26,6 +29,8 @@ public class Truck_Controller : MonoBehaviour {
 
     public void add_box(int size_x, int size_y, GameObject box)
     {
+        if (current.sprite != uncovered)
+            current.sprite = uncovered;
         if(cur_boxes_index < (spaces_x * spaces_y))
         {
             box.transform.parent = gameObject.transform;
@@ -40,6 +45,7 @@ public class Truck_Controller : MonoBehaviour {
 
     public void send()
     {
+        current.sprite = covered;
         StartCoroutine(send_truck());
     }
 
