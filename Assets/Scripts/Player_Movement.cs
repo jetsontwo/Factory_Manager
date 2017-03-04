@@ -46,7 +46,7 @@ public class Player_Movement : Movement{
 
     }
 
-    void OnTriggerEnter2D(Collider2D c)
+    void OnTriggerStay2D(Collider2D c)
     {
         if (c.CompareTag("Box") && !holding)
             holdable_object = c.gameObject;
@@ -81,15 +81,15 @@ public class Player_Movement : Movement{
         else
             new_pos += new Vector3(0.3f, 0, 0);
         RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
-        if (search.transform == null)
+        if(search.transform == null)
             obj.transform.position = new_pos;
+        else if (search.transform.tag == "Out_of_Bounds")
+            obj.transform.position = gameObject.transform.position;
         else if (search.transform.tag == "Truck")
             search.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
         else
-        {
-            print(search.transform.name);
-            obj.transform.position = gameObject.transform.position;
-        }
+            obj.transform.position = new_pos;
+
         holding = false;
         holdable_object = null;
     }
