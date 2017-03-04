@@ -7,7 +7,8 @@ public class Truck_Controller : MonoBehaviour {
     public int spaces_x, spaces_y;
     public Sprite covered, uncovered;
     private SpriteRenderer current;
-    public SpriteRenderer load_spot;
+    private SpriteRenderer load_spot_sprite;
+    public GameObject load_spot;
     public float x_space, y_space, max_vel, accel, wait_time;
     private int cur_boxes_index = 0;
     private GameObject[] boxes;
@@ -53,11 +54,13 @@ public class Truck_Controller : MonoBehaviour {
 
     IEnumerator send_truck()
     {
-        while (load_spot.color.a > 0)
+        load_spot_sprite = load_spot.GetComponent<SpriteRenderer>();
+        while (load_spot_sprite.color.a > 0)
         {
-            load_spot.color = new Color(load_spot.color.r, load_spot.color.g, load_spot.color.b, load_spot.color.a - 0.02f);
+            load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a - 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
+        load_spot.SetActive(false);
 
         while (transform.position.x < target_x)
         {
@@ -84,11 +87,12 @@ public class Truck_Controller : MonoBehaviour {
             transform.position = new Vector3(original, transform.position.y, 0);
         rb.velocity = Vector2.zero;
 
-        while (load_spot.color.a < 255)
+        while (load_spot_sprite.color.a < 255)
         {
-            load_spot.color = new Color(load_spot.color.r, load_spot.color.g, load_spot.color.b, load_spot.color.a + 0.02f);
+            load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a + 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
+        load_spot.SetActive(true);
     }
 
 

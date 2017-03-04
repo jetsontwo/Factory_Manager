@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : Movement{
+public class Player_Movement : Worker{
 
 
     public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
-    private AudioSource source;
-    public AudioClip pick_up, drop;
-    private GameObject holdable_object = null;
-    private bool holding = false, facing_left = true;
 
     // Use this for initialization
     void Start()
     {
-        source = GetComponent<AudioSource>();
-        setup(GetComponent<Rigidbody2D>(), acceleration, drag, max_vel, vel_deadzone);
+        setup(acceleration, drag, max_vel, vel_deadzone, held_object_offset);
     }
 
     // Update is called once per frame
@@ -58,40 +53,6 @@ public class Player_Movement : Movement{
                 holdable_object = null;
     }
 
-    void pickup_item(GameObject obj)
-    {
-        source.clip = pick_up;
-        source.Play();
-        obj.transform.parent = gameObject.transform;
-        if (facing_left)
-            obj.transform.position = new Vector3(gameObject.transform.position.x - held_object_offset, gameObject.transform.position.y, 0);
-        else
-            obj.transform.position = new Vector3(gameObject.transform.position.x + held_object_offset, gameObject.transform.position.y, 0);
-        holding = true;
-    }
-
-    void drop_item(GameObject obj)
-    {
-        source.clip = drop;
-        source.Play();
-        obj.transform.parent = null;
-        Vector3 new_pos = obj.transform.position;
-        if (facing_left)
-            new_pos -= new Vector3(0.3f, 0, 0);
-        else
-            new_pos += new Vector3(0.3f, 0, 0);
-        RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
-        if(search.transform == null)
-            obj.transform.position = new_pos;
-        else if (search.transform.tag == "Out_of_Bounds")
-            obj.transform.position = gameObject.transform.position;
-        else if (search.transform.tag == "Truck")
-            search.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
-        else
-            obj.transform.position = new_pos;
-
-        holding = false;
-        holdable_object = null;
-    }
+    
 
 }

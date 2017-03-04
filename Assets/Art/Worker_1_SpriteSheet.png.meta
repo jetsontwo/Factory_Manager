@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: 66d4fad016aa7804795eb0ddaa55f257
-timeCreated: 1488618641
+timeCreated: 1488619656
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Worker_1_SpriteSheet_0
-    21300002: Worker_1_SpriteSheet_1
-    21300004: Worker_1_SpriteSheet_2
-    21300006: Worker_1_SpriteSheet_3
-    21300008: Worker_1_SpriteSheet_4
+    21300000: Worker_1_Head
+    21300002: Worker_1_Body
+    21300004: Worker_1_RHand
+    21300006: Worker_1_LHand
+    21300008: Worker_1_Hat
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -75,67 +75,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Worker_1_SpriteSheet_0
+      name: Worker_1_Head
       rect:
         serializedVersion: 2
-        x: 0
-        y: 450
-        width: 40
-        height: 50
+        x: 15
+        y: 485
+        width: 10
+        height: 10
       alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_1_Body
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 460
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Worker_1_RHand
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 469
+        width: 3
+        height: 3
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Worker_1_SpriteSheet_1
+      name: Worker_1_LHand
       rect:
         serializedVersion: 2
-        x: 40
-        y: 450
-        width: 40
-        height: 50
+        x: 7
+        y: 469
+        width: 3
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Worker_1_SpriteSheet_2
+      name: Worker_1_Hat
       rect:
         serializedVersion: 2
-        x: 80
-        y: 450
-        width: 40
-        height: 50
+        x: 14
+        y: 494
+        width: 12
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Worker_1_SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 450
-        width: 40
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Worker_1_SpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 450
-        width: 40
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
