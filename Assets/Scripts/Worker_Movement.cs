@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Worker_Movement : Worker {
 
-    public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
     public Transform box_list, truck_list;
     private bool should_interact = true, need_target = true;
     private Vector3 target = Vector3.zero;
 
     // Use this for initialization
-    void Start()
-    {
-        setup(acceleration, drag, max_vel, vel_deadzone, held_object_offset);
-        
-    }
 
     // Update is called once per frame
     void Update () {
@@ -23,7 +17,7 @@ public class Worker_Movement : Worker {
         {
             if(need_target)
                 target = find_box();
-            if ((transform.position - target).magnitude < 0.1)
+            if ((transform.position - target).magnitude < 0.3)
             {
                 should_interact = true;
                 need_target = true;
@@ -39,7 +33,7 @@ public class Worker_Movement : Worker {
         {
             if(need_target)
                 target = find_zone();
-            if ((transform.position - target).magnitude < 0.1)
+            if ((transform.position - target).magnitude < 1)
             {
                 should_interact = true;
                 need_target = true;
@@ -91,6 +85,7 @@ public class Worker_Movement : Worker {
         }
         if (to_return.x == 999)
             return new Vector3(Random.Range(2, 6), Random.Range(-2, -4));
+        print(to_return + " box");
         return to_return;
     }
 
@@ -107,6 +102,7 @@ public class Worker_Movement : Worker {
         }
         if (to_return.x == 999)
             return new Vector3(Random.Range(2, 6), Random.Range(-2, -4));
+        print(to_return + " zone");
         return to_return;
     }
 

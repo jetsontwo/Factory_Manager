@@ -4,20 +4,9 @@ using UnityEngine;
 
 public class Worker : Movement {
 
-    private AudioSource source;
     public AudioClip pick_up, drop;
     public bool facing_left, holding;
     public GameObject holdable_object;
-    private float held_object_offset;
-    
-
-    public void setup(float acceleration, float drag, float max_vel, float vel_deadzone, float held_object_off)
-    {
-        held_object_offset = held_object_off;
-        setup(GetComponent<Rigidbody2D>(), acceleration, drag, max_vel, vel_deadzone);
-        source = GetComponent<AudioSource>();
-
-    }
 
 
 

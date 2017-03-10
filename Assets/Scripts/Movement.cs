@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-    private float acceleration, drag, max_vel, vel_deadzone;
+    public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
     private Rigidbody2D rb;
-    private float horiz, vert;
+    public AudioSource source;
+    private float horiz = 0, vert = 0;
 
     // Use this for initialization
-    public void setup(Rigidbody2D rb_input, float accel_input, float drag_input, float max_vel_input, float vel_deadzone_input)
+    void Start()
     {
-        rb = rb_input;
-        acceleration = accel_input;
-        drag = drag_input;
-        max_vel = max_vel_input;
-        vel_deadzone = vel_deadzone_input;
-        horiz = 0; vert = 0;
+        rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
+
 
     // Update is called once per frame
     public void move()

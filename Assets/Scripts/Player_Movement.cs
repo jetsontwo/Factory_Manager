@@ -5,13 +5,7 @@ using UnityEngine;
 public class Player_Movement : Worker{
 
 
-    public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
-
     // Use this for initialization
-    void Start()
-    {
-        setup(acceleration, drag, max_vel, vel_deadzone, held_object_offset);
-    }
 
     // Update is called once per frame
     void Update () {
