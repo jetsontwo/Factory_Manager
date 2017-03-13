@@ -42,7 +42,7 @@ public class Truck_Controller : MonoBehaviour {
             box.transform.position = new Vector2(init_location.x - (x_offset * x_space), init_location.y - (y_offset * y_space));
             cur_boxes_index++;
         }
-        else
+        if (cur_boxes_index == (spaces_x * spaces_y))
             send();
     }
 
@@ -78,7 +78,7 @@ public class Truck_Controller : MonoBehaviour {
         rb.velocity = -fast;
         while (transform.position.x > original)
         {
-            if(rb.velocity.magnitude > 0.1)
+            if(rb.velocity.x < -0.2f)
                 rb.velocity += new Vector2(accel/1.1f * Time.deltaTime, 0);
 
             yield return new WaitForSeconds(0.1f);

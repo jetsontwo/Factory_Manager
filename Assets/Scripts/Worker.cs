@@ -50,7 +50,13 @@ public class Worker : MonoBehaviour {
         if (holding)
             drop_item(holdable_object);
         else if (holdable_object != null)
+        {
+            if (holdable_object.transform.parent != null)
+                if (holdable_object.transform.parent.CompareTag("Worker") || holdable_object.transform.parent.CompareTag("Player"))
+                    return;
             pickup_item(holdable_object);
+        }
+            
     }
 
     public bool holding_box()

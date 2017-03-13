@@ -53,10 +53,10 @@ public class Worker_Movement : MonoBehaviour {
             if (found_box != null)
             {
                 StartCoroutine(walk_to_box(found_box));
+                found_box.transform.parent = null;
                 break;
             }
             Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
-            print(next_pos);
             StartCoroutine(move.go_to_pos(next_pos));
             yield return new WaitUntil(move.at_pos);
             move.move(0, 0);
@@ -78,10 +78,13 @@ public class Worker_Movement : MonoBehaviour {
 
     IEnumerator drop_off_box()
     {
-        GameObject found_truck = find_zone();
-        StartCoroutine(move.go_to_pos(found_truck.transform.position));
-        yield return new WaitUntil(move.at_pos);
-        work.interact_with_object();
+        if (work.holding_box())
+        {
+            GameObject found_truck = find_zone();
+            StartCoroutine(move.go_to_pos(found_truck.transform.position));
+            yield return new WaitUntil(move.at_pos);
+            work.interact_with_object();
+        }
         StartCoroutine(Idle());
     }
 }
