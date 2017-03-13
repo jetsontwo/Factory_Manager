@@ -22,6 +22,7 @@ public class Worker : MonoBehaviour {
         source.Play();
         obj.transform.parent = gameObject.transform;
         obj.transform.position = new Vector3(gameObject.transform.position.x + (transform.rotation.eulerAngles.y == 180 ?  held_object_offset : -held_object_offset), gameObject.transform.position.y, 0);
+        holdable_object = obj;
         holding = true;
     }
 

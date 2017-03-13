@@ -69,9 +69,11 @@ public class Worker_Movement : MonoBehaviour {
         StartCoroutine(move.go_to_pos(box.transform.position));
         yield return new WaitUntil(move.at_pos);
         move.move(0, 0);
-        work.interact_with_object();
-        if (work.holding_box())
+        if (box.transform.parent == null)
+        {
+            work.pickup_item(box);
             StartCoroutine(drop_off_box());
+        }
         else
             StartCoroutine(Idle());
     }
