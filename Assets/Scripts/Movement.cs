@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-    public float acceleration, drag, max_vel, vel_deadzone, held_object_offset;
+    public float acceleration, drag, max_vel, vel_deadzone;
     private Rigidbody2D rb;
-    public AudioSource source;
+    private AudioSource source;
     private float horiz = 0, vert = 0;
+    private bool at_given_pos = false;
 
     // Use this for initialization
     void Start()
@@ -18,8 +19,18 @@ public class Movement : MonoBehaviour {
 
 
     // Update is called once per frame
-    public void move()
+    public void move(float horizontal, float vertical)
     {
+        horiz = horizontal * acceleration * Time.deltaTime;
+        vert = vertical * acceleration * Time.deltaTime;
+
+        if (horiz > 0)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        
+        else if (horiz < 0)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        
+
         if (horiz != 0)
             rb.velocity = new Vector2(max_vel * horiz, rb.velocity.y);
         else
@@ -30,8 +41,27 @@ public class Movement : MonoBehaviour {
             rb.velocity = new Vector2(rb.velocity.x, 0);    
     }
 
-    public void set_speed(float horizontal, float vertical)
+    public IEnumerator go_to_pos(Vector2 next_pos)
     {
-        horiz = horizontal * acceleration * Time.deltaTime; vert = vertical * acceleration * Time.deltaTime;
+        at_given_pos = false;
+        while (true)
+        {
+            int move_x = 0, move_y = 0;
+            float dif_x = Mathf.Abs(next_pos.x - transform.position.x), dif_y = Mathf.Abs(next_pos.y - transform.position.y);
+            if (dif_x < 0.2 && dif_y < 0.2)
+                break;
+            if (dif_x >= 0.2)
+                move_x = next_pos.x > transform.position.x ? 1 : -1;
+            if (dif_y >= 0.2)
+                move_y = next_pos.y > transform.position.y ? 1 : -1;
+            move(move_x, move_y);
+            yield return new WaitForSeconds(0.1f);
+        }
+        at_given_pos = true;
+    }
+
+    public bool at_pos()
+    {
+        return at_given_pos;
     }
 }

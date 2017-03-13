@@ -2,51 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : Worker{
+public class Player_Movement : MonoBehaviour{
 
+
+    private Worker work;
+    private Movement move;
 
     // Use this for initialization
+    void Start()
+    {
+        work = GetComponent<Worker>();
+        move = GetComponent<Movement>();
+    }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         float horiz = Input.GetAxis("Horizontal");
-        if (horiz > 0)
-        {
-            facing_left = false;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
-        else if (horiz < 0)
-        {
-            facing_left = true;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-
-        set_speed(horiz, Input.GetAxis("Vertical"));
-        move();
+        move.move(horiz, Input.GetAxis("Vertical"));
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (holding)
-                drop_item(holdable_object);
-            else if (holdable_object != null)
-                pickup_item(holdable_object);
-        }
-
-
+            work.interact_with_object();
     }
-
-    void OnTriggerStay2D(Collider2D c)
-    {
-        if (c.CompareTag("Box") && !holding)
-            holdable_object = c.gameObject;
-    }
-    void OnTriggerExit2D(Collider2D c)
-    {
-        if(!holding)
-            if (c.gameObject == holdable_object)
-                holdable_object = null;
-    }
-
-    
-
 }

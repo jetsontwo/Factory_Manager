@@ -2,36 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Worker : Movement {
+public class Worker : MonoBehaviour {
 
     public AudioClip pick_up, drop;
-    public bool facing_left, holding;
-    public GameObject holdable_object;
+    private AudioSource source;
+    private bool holding;
+    private GameObject holdable_object;
+    public float held_object_offset;
 
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
-
-    protected void pickup_item(GameObject obj)
+    public void pickup_item(GameObject obj)
     {
         source.clip = pick_up;
         source.Play();
         obj.transform.parent = gameObject.transform;
-        if (facing_left)
-            obj.transform.position = new Vector3(gameObject.transform.position.x - held_object_offset, gameObject.transform.position.y, 0);
-        else
-            obj.transform.position = new Vector3(gameObject.transform.position.x + held_object_offset, gameObject.transform.position.y, 0);
+        obj.transform.position = new Vector3(gameObject.transform.position.x + (transform.rotation.eulerAngles.y == 180 ?  held_object_offset : -held_object_offset), gameObject.transform.position.y, 0);
         holding = true;
     }
 
-    protected void drop_item(GameObject obj)
+    public void drop_item(GameObject obj)
     {
         source.clip = drop;
         source.Play();
         obj.transform.parent = null;
         Vector3 new_pos = obj.transform.position;
-        if (facing_left)
-            new_pos -= new Vector3(0.3f, 0, 0);
-        else
-            new_pos += new Vector3(0.3f, 0, 0);
+        new_pos += new Vector3((transform.rotation.eulerAngles.y == 180 ? held_object_offset : -held_object_offset), 0, 0);
         RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
         if (search.transform == null)
             obj.transform.position = new_pos;
@@ -44,5 +43,30 @@ public class Worker : Movement {
 
         holding = false;
         holdable_object = null;
+    }
+
+    public void interact_with_object()
+    {
+        if (holding)
+            drop_item(holdable_object);
+        else if (holdable_object != null)
+            pickup_item(holdable_object);
+    }
+
+    public bool holding_box()
+    {
+        return holding;
+    }
+
+    void OnTriggerStay2D(Collider2D c)
+    {
+        if (c.CompareTag("Box") && !holding)
+            holdable_object = c.gameObject;
+    }
+    void OnTriggerExit2D(Collider2D c)
+    {
+        if (!holding)
+            if (c.gameObject == holdable_object)
+                holdable_object = null;
     }
 }

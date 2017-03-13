@@ -2,123 +2,86 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Worker_Movement : Worker {
+public class Worker_Movement : MonoBehaviour {
 
     public Transform box_list, truck_list;
-    private bool should_interact = true, need_target = true;
     private Vector3 target = Vector3.zero;
+    private Movement move;
+    private Worker work;
 
-    // Use this for initialization
-
-    // Update is called once per frame
-    void Update () {
-        float horiz = 0, vert = 0;
-        if (!holding)
-        {
-            if(need_target)
-                target = find_box();
-            if ((transform.position - target).magnitude < 0.3)
-            {
-                should_interact = true;
-                need_target = true;
-            }
-            else
-            {
-                horiz = target.x > transform.position.x ? 1 : -1;
-                vert = target.y > transform.position.y ? 1 : -1;
-            }
-
-        }
-        else
-        {
-            if(need_target)
-                target = find_zone();
-            if ((transform.position - target).magnitude < 1)
-            {
-                should_interact = true;
-                need_target = true;
-            }
-            else
-            {
-                horiz = target.x > transform.position.x ? 1 : -1;
-                vert = target.y > transform.position.y ? 1 : -1;
-            }
-        }
-
-        if (horiz > 0)
-        {
-            facing_left = false;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
-        else if (horiz < 0)
-        {
-            facing_left = true;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-
-        set_speed(horiz, vert);
-        move();
-
-        if (holdable_object != null && should_interact)
-        {
-            if (holding)
-                drop_item(holdable_object);
-            else if (holdable_object != null)
-            {
-                pickup_item(holdable_object);
-                should_interact = false;
-            }
-        }
+    void Start()
+    {
+        work = GetComponent<Worker>();
+        move = GetComponent<Movement>();
+        StartCoroutine(Idle());
     }
 
-    private Vector3 find_box()
+    private GameObject find_box()
     {
-        need_target = false;
-        if (holdable_object != null)
-            return Vector3.zero;
 
-        Vector3 to_return = new Vector3(999, 999, 999);
-        foreach(Transform box in box_list)
+        GameObject to_return = null;
+        foreach (Transform box in box_list)
         {
-            if ((transform.position - box.position).magnitude < (transform.position - to_return).magnitude)
-                to_return = box.position;
+            if (to_return == null)
+                to_return = box.gameObject;
+            else if ((transform.position - box.position).magnitude < (transform.position - to_return.transform.position).magnitude)
+                to_return = box.gameObject;
         }
-        if (to_return.x == 999)
-            return new Vector3(Random.Range(2, 6), Random.Range(-2, -4));
-        print(to_return + " box");
         return to_return;
     }
 
-    private Vector3 find_zone()
+    private GameObject find_zone()
     {
-        need_target = false;
         
-        Vector3 to_return = new Vector3(999, 999, 999);
+        GameObject to_return = null;
         foreach(Transform truck in truck_list)
         {
             Transform drop_zone = truck.FindChild("Drop_Off");
-            if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return).magnitude)
-                to_return = drop_zone.position;
+            if (to_return == null)
+                to_return = drop_zone.gameObject;
+            else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
+                to_return = drop_zone.gameObject;
         }
-        if (to_return.x == 999)
-            return new Vector3(Random.Range(2, 6), Random.Range(-2, -4));
-        print(to_return + " zone");
         return to_return;
     }
 
-
-
-    void OnTriggerStay2D(Collider2D c)
+    IEnumerator Idle()
     {
-        if (c.CompareTag("Box") && !holding)
-            holdable_object = c.gameObject;
-        else if (c.CompareTag("Truck") && holding)
-            should_interact = true;
+        while(true)
+        {
+            GameObject found_box = find_box();
+            if (found_box != null)
+            {
+                StartCoroutine(walk_to_box(found_box));
+                break;
+            }
+            Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
+            print(next_pos);
+            StartCoroutine(move.go_to_pos(next_pos));
+            yield return new WaitUntil(move.at_pos);
+            move.move(0, 0);
+            yield return new WaitForSeconds(Random.Range(1f, 3f));
+        }
     }
-    void OnTriggerExit2D(Collider2D c)
+
+    IEnumerator walk_to_box(GameObject box)
     {
-        if (!holding)
-            if (c.gameObject == holdable_object)
-                holdable_object = null;
+        StartCoroutine(move.go_to_pos(box.transform.position));
+        yield return new WaitUntil(move.at_pos);
+        move.move(0, 0);
+        work.interact_with_object();
+        if (work.holding_box())
+            StartCoroutine(drop_off_box());
+        else
+            StartCoroutine(Idle());
+    }
+
+    IEnumerator drop_off_box()
+    {
+        GameObject found_truck = find_zone();
+        StartCoroutine(move.go_to_pos(found_truck.transform.position));
+        yield return new WaitUntil(move.at_pos);
+        work.interact_with_object();
+        StartCoroutine(Idle());
     }
 }
