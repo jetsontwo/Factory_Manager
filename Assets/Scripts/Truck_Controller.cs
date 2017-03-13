@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Truck_Controller : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class Truck_Controller : MonoBehaviour {
     private Vector2 init_location;
     private Rigidbody2D rb;
     private float target_x, original;
-
+    public Money_Controller mc;
 
     void Start()
     {
@@ -74,6 +75,10 @@ public class Truck_Controller : MonoBehaviour {
         yield return new WaitForSeconds(wait_time);
 
         /////////////////////////Sell things here/////////////////////////////////////
+
+        mc.add_cash(cur_boxes_index * 10);    // need the box prices here
+        foreach(GameObject box in boxes)
+            Destroy(box);
         
         rb.velocity = -fast;
         while (transform.position.x > original)
