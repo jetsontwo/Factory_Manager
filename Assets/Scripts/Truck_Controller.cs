@@ -78,7 +78,7 @@ public class Truck_Controller : MonoBehaviour {
         rb.velocity = -fast;
         while (transform.position.x > original)
         {
-            if(rb.velocity.x < -0.2f)
+            if(rb.velocity.x < -1f)
                 rb.velocity += new Vector2(accel/1.1f * Time.deltaTime, 0);
 
             yield return new WaitForSeconds(0.1f);
@@ -87,12 +87,12 @@ public class Truck_Controller : MonoBehaviour {
             transform.position = new Vector3(original, transform.position.y, 0);
         rb.velocity = Vector2.zero;
 
-        while (load_spot_sprite.color.a < 255)
+        load_spot.SetActive(true);
+        while (load_spot_sprite.color.a < 1)
         {
             load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a + 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
-        load_spot.SetActive(true);
     }
 
 

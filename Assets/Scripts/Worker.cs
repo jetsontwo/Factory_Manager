@@ -8,6 +8,7 @@ public class Worker : MonoBehaviour {
     private AudioSource source;
     private bool holding;
     private GameObject holdable_object;
+    public Transform boxes_parent;
     public float held_object_offset;
 
     void Start()
@@ -33,13 +34,22 @@ public class Worker : MonoBehaviour {
         new_pos += new Vector3((transform.rotation.eulerAngles.y == 180 ? held_object_offset : -held_object_offset), 0, 0);
         RaycastHit2D search = Physics2D.Raycast(new_pos, Vector2.zero, 1f);
         if (search.transform == null)
+        {
             obj.transform.position = new_pos;
+            obj.transform.parent = boxes_parent;
+        }
         else if (search.transform.tag == "Out_of_Bounds")
+        {
             obj.transform.position = gameObject.transform.position;
+            obj.transform.parent = boxes_parent;
+        }
         else if (search.transform.tag == "Truck")
             search.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
         else
+        {
             obj.transform.position = new_pos;
+            obj.transform.parent = boxes_parent;
+        }
 
         holding = false;
         holdable_object = null;
