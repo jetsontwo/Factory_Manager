@@ -9,11 +9,20 @@ public class Worker_Movement : MonoBehaviour {
     private Movement move;
     private Worker work;
 
-    void Start()
+
+    void OnEnable()
     {
         work = GetComponent<Worker>();
         move = GetComponent<Movement>();
-        StartCoroutine(Idle());
+        if (work.holding_box())
+            StartCoroutine(drop_off_box());
+        else
+            StartCoroutine(Idle());
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private GameObject find_box()

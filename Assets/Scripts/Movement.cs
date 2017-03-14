@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour {
     private bool at_given_pos = false;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();

@@ -20,8 +20,6 @@ public class Camera_Track_Mouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         mouse_pos = Input.mousePosition;
-        print(mouse_pos);
-        print(Screen.width + " " + Screen.height);
 
         if (mouse_pos.x >= mouse_x_max && transform.position.x <= max_x)
             transform.Translate(new Vector3((mouse_pos.x - mouse_x_max) * Time.deltaTime * speed_mod, 0, 0));
