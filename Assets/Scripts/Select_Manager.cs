@@ -31,6 +31,7 @@ public class Select_Manager : MonoBehaviour {
                         cur_manager = r_hit.collider.gameObject;
                         cur_manager.GetComponent<Player_Movement>().enabled = true;
                         cur_manager.GetComponent<Worker_Movement>().enabled = false;
+                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
                         cur_move = cur_manager.GetComponent<Movement>();
                         cur_move.acceleration = 20;
                         cur_move.max_vel = 10;
@@ -41,9 +42,11 @@ public class Select_Manager : MonoBehaviour {
                         cur_move.max_vel = 8;
                         cur_manager.GetComponent<Player_Movement>().enabled = false;
                         cur_manager.GetComponent<Worker_Movement>().enabled = true;
+                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
                         cur_manager = r_hit.collider.gameObject;
                         cur_manager.GetComponent<Player_Movement>().enabled = true;
                         cur_manager.GetComponent<Worker_Movement>().enabled = false;
+                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
                         cur_move = cur_manager.GetComponent<Movement>();
                         cur_move.acceleration = 20;
                         cur_move.max_vel = 10;

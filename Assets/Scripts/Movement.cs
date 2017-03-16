@@ -11,11 +11,17 @@ public class Movement : MonoBehaviour {
     private bool at_given_pos = false;
 
     // Use this for initialization
-    void Awake()
+    void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
     }
+
+    public bool is_enabled()
+    {
+        return isActiveAndEnabled;
+    }
+
 
 
     // Update is called once per frame

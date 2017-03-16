@@ -9,20 +9,27 @@ public class Worker_Movement : MonoBehaviour {
     private Movement move;
     private Worker work;
 
-
     void OnEnable()
     {
-        work = GetComponent<Worker>();
-        move = GetComponent<Movement>();
-        if (work.holding_box())
-            StartCoroutine(drop_off_box());
-        else
-            StartCoroutine(Idle());
+        if (work == null)
+            work = GetComponent<Worker>();
+        if (move == null)
+            move = GetComponent<Movement>();
+        StartCoroutine(enable());
     }
 
     void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    IEnumerator enable()
+    {
+        yield return new WaitUntil(move.is_enabled);
+        if (work.holding_box())
+            StartCoroutine(drop_off_box());
+        else
+            StartCoroutine(Idle());
     }
 
     private GameObject find_box()
