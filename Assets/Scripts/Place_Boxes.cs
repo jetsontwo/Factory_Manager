@@ -11,7 +11,8 @@ public class Place_Boxes : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine(create_boxes(30, box));
+        //for testing
+        //StartCoroutine(create_boxes(30, box));
     }
 
 
