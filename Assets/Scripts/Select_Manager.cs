@@ -54,6 +54,19 @@ public class Select_Manager : MonoBehaviour {
                     track_player(cur_manager);
                 }
             }
+            else
+            {
+                if(cur_manager != null)
+                {
+                    cur_move.acceleration = 15;
+                    cur_move.max_vel = 8;
+                    cur_manager.GetComponent<Player_Movement>().enabled = false;
+                    cur_manager.GetComponent<Worker_Movement>().enabled = true;
+                    cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
+                    cur_manager = null;
+                    track_mouse();
+                }
+            }
         }
 
 	}

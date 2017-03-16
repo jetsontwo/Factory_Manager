@@ -27,7 +27,6 @@ public class Camera_Track_Player : MonoBehaviour {
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && Camera.main.orthographicSize > 2) // forward
             Camera.main.orthographicSize--;
 
-        print(next_spot);
         if(next_spot.x < max_x && next_spot.x > 0)
             transform.position = new Vector3(next_spot.x, transform.position.y, -10);
         if (next_spot.y > max_y && next_spot.y < 0)
