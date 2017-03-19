@@ -26,44 +26,19 @@ public class Select_Manager : MonoBehaviour {
             {
                 if (r_hit.collider.gameObject.tag == "Worker")
                 {
-                    if(cur_manager == null)
-                    {
-                        cur_manager = r_hit.collider.gameObject;
-                        cur_manager.GetComponent<Player_Movement>().enabled = true;
-                        cur_manager.GetComponent<Worker_Movement>().enabled = false;
-                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
-                        cur_move = cur_manager.GetComponent<Movement>();
-                        cur_move.acceleration = 20;
-                        cur_move.max_vel = 10;
-                    }
-                    else
-                    {
-                        cur_move.acceleration = 15;
-                        cur_move.max_vel = 8;
-                        cur_manager.GetComponent<Player_Movement>().enabled = false;
-                        cur_manager.GetComponent<Worker_Movement>().enabled = true;
-                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
-                        cur_manager = r_hit.collider.gameObject;
-                        cur_manager.GetComponent<Player_Movement>().enabled = true;
-                        cur_manager.GetComponent<Worker_Movement>().enabled = false;
-                        cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
-                        cur_move = cur_manager.GetComponent<Movement>();
-                        cur_move.acceleration = 20;
-                        cur_move.max_vel = 10;
-                    }
-                    track_player(cur_manager);
+                    //set_manager(r_hit.collider.gameObject);
+                    if (cur_manager != null)
+                        deselect_manager();
+                    r_hit.collider.GetComponent<Worker_Stats>().show_stats();
+                    //track_player(cur_manager);
+                    track_player(r_hit.collider.gameObject);
                 }
             }
             else
             {
                 if(cur_manager != null)
                 {
-                    cur_move.acceleration = 15;
-                    cur_move.max_vel = 8;
-                    cur_manager.GetComponent<Player_Movement>().enabled = false;
-                    cur_manager.GetComponent<Worker_Movement>().enabled = true;
-                    cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
-                    cur_manager = null;
+                    deselect_manager();
                     track_mouse();
                 }
             }
@@ -83,5 +58,44 @@ public class Select_Manager : MonoBehaviour {
         t_mouse.enabled = false;
         t_player.enabled = true;
         t_player.thing_to_track = player;
+    }
+    
+    public void set_manager(GameObject manager)
+    {
+        if (cur_manager == null)
+        {
+            cur_manager = manager;
+            cur_manager.GetComponent<Player_Movement>().enabled = true;
+            cur_manager.GetComponent<Worker_Movement>().enabled = false;
+            cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
+            cur_move = cur_manager.GetComponent<Movement>();
+            cur_move.acceleration = 20;
+            cur_move.max_vel = 10;
+        }
+        else
+        {
+            cur_move.acceleration = 15;
+            cur_move.max_vel = 8;
+            cur_manager.GetComponent<Player_Movement>().enabled = false;
+            cur_manager.GetComponent<Worker_Movement>().enabled = true;
+            cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
+            cur_manager = manager;
+            cur_manager.GetComponent<Player_Movement>().enabled = true;
+            cur_manager.GetComponent<Worker_Movement>().enabled = false;
+            cur_manager.GetComponent<BoxCollider2D>().isTrigger = false;
+            cur_move = cur_manager.GetComponent<Movement>();
+            cur_move.acceleration = 20;
+            cur_move.max_vel = 10;
+        }
+    }
+
+    public void deselect_manager()
+    {
+        cur_move.acceleration = 15;
+        cur_move.max_vel = 8;
+        cur_manager.GetComponent<Player_Movement>().enabled = false;
+        cur_manager.GetComponent<Worker_Movement>().enabled = true;
+        cur_manager.GetComponent<BoxCollider2D>().isTrigger = true;
+        cur_manager = null;
     }
 }
