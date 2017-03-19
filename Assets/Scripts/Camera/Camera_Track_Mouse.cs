@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camera_Track_Mouse : MonoBehaviour {
 
     public float max_x, max_y, speed_mod;
-    private float mouse_x_max, mouse_x_min, mouse_y_max, mouse_y_min;
+    private float mouse_x_max, mouse_x_min, mouse_y_max, mouse_y_min, horiz, vert;
     private Vector3 mouse_pos;
 
     void Start()
@@ -35,6 +35,29 @@ public class Camera_Track_Mouse : MonoBehaviour {
             Camera.main.orthographicSize++;
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && Camera.main.orthographicSize > 2) // forward
             Camera.main.orthographicSize--;
+
+        horiz = 0;
+        if (Input.GetKey(KeyCode.D))
+            horiz = 1;
+        else if (Input.GetKey(KeyCode.A))
+            horiz = -1;
+
+        if (horiz > 0 && transform.position.x <= max_x)
+            transform.Translate(new Vector3(50 * Time.deltaTime * speed_mod, 0, 0));
+        else if (horiz < 0 && transform.position.x >= 0)
+            transform.Translate(new Vector3(-50 * Time.deltaTime * speed_mod, 0, 0));
+
+        vert = 0;
+        if (Input.GetKey(KeyCode.W))
+            vert = 1;
+        else if (Input.GetKey(KeyCode.S))
+            vert = -1;
+
+        if (vert > 0 && transform.position.y <= 0)
+            transform.Translate(new Vector3(0, 50 * Time.deltaTime * speed_mod, 0));
+        else if (vert < 0 && transform.position.y >= max_y)
+            transform.Translate(new Vector3(0, -50 * Time.deltaTime * speed_mod, 0));
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Cursor.lockState = Cursor.lockState == CursorLockMode.Confined ? CursorLockMode.None : CursorLockMode.Confined;

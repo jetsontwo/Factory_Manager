@@ -6,7 +6,7 @@ public class Place_Boxes : MonoBehaviour {
 
 
     public Transform box_parent;
-    public GameObject box;
+    public GameObject box = null;
     public float wait_time;
 
     void Start()
@@ -24,5 +24,6 @@ public class Place_Boxes : MonoBehaviour {
             new_box.transform.position += new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             yield return new WaitForSeconds(wait_time);
         }
+        box = null;
     }
 }

@@ -8,6 +8,7 @@ public class Buy_Menu : MonoBehaviour {
     private Camera_Track_Player p_track; //1
     private int track_type = -1;
     public GameObject menu;
+    private GameObject deliv_zone, box_to_place;
 
 	// Use this for initialization
 	void Start () {
@@ -62,5 +63,45 @@ public class Buy_Menu : MonoBehaviour {
     private void populate_menu()
     {
         
+    }
+        
+    public void set_box(GameObject box)
+    {
+        box_to_place = box;
+    }
+
+    public void create_order(int num_boxes)
+    {
+        StartCoroutine(Find_Zone());
+        if(box_to_place != null)
+            deliv_zone.GetComponent<Place_Boxes>().create_boxes(num_boxes, box_to_place);
+    }
+
+    private IEnumerator Find_Zone()
+    {
+        RaycastHit2D r_hit;
+
+        while(true)
+        {
+            r_hit = Physics2D.Raycast(new Vector2(Input.mousePosition.x, Input.mousePosition.y), Vector2.zero);
+            if(r_hit)
+            {
+                if(r_hit.collider.gameObject.tag == "Delivery")
+                {
+                    if(r_hit.collider.GetComponent<Place_Boxes>().box != null)
+                    {
+                        //highlight here?
+                        if(Input.GetMouseButtonDown(0))
+                        {
+                            deliv_zone = r_hit.collider.gameObject;
+                            break;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(0.1f);
     }
 }
