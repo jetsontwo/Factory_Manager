@@ -9,6 +9,8 @@ public class Buy_Menu : MonoBehaviour {
     private int track_type = -1;
     public GameObject menu;
     private GameObject deliv_zone, box_to_place;
+    public Sprite highlight;
+    private SpriteRenderer changed_sprite;
 
 	// Use this for initialization
 	void Start () {
@@ -64,6 +66,7 @@ public class Buy_Menu : MonoBehaviour {
         RaycastHit2D r_hit;
         menu.SetActive(false);
         enable_Camera();
+        Sprite before = null;
         while(true)
         {
             r_hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)), Vector2.zero);
@@ -73,14 +76,41 @@ public class Buy_Menu : MonoBehaviour {
                 {
                     if(r_hit.collider.GetComponent<Place_Boxes>().box == null)
                     {
-                        //highlight here?
-                        if(Input.GetMouseButtonDown(0))
+                        if(changed_sprite == null)
+                        {
+                            changed_sprite = r_hit.collider.GetComponent<SpriteRenderer>();
+                            before = changed_sprite.sprite;
+                            print(before.name);
+                        }
+                        changed_sprite.sprite = highlight;
+                        if (Input.GetMouseButtonDown(0))
                         {
                             deliv_zone = r_hit.collider.gameObject;
+                            changed_sprite.sprite = before;
+                            before = null;
+                            changed_sprite = null;
                             break;
                         }
                     }
 
+                }
+                else
+                {
+                    if (before != null)
+                    {
+                        changed_sprite.sprite = before;
+                        before = null;
+                        changed_sprite = null;
+                    }
+                }
+            }
+            else
+            {
+                if (before != null)
+                {
+                    changed_sprite.sprite = before;
+                    before = null;
+                    changed_sprite = null;
                 }
             }
             yield return new WaitForSeconds(0.001f);
