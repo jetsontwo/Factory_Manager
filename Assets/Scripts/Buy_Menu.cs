@@ -22,26 +22,13 @@ public class Buy_Menu : MonoBehaviour {
         {
             if(!menu.activeSelf)
             {
-                if (m_track.enabled)
-                {
-                    m_track.enabled = false;
-                    track_type = 0;
-                }
-                else if (p_track.enabled)
-                {
-                    p_track.enabled = false;
-                    track_type = 1;
-                }
+                disable_Camera();
                 menu.SetActive(true);
                 populate_menu();
             }
             else
             {
-                if (track_type == 0)
-                    m_track.enabled = true;
-                else if (track_type == 1)
-                    p_track.enabled = true;
-                track_type = -1;
+                enable_Camera();
                 menu.SetActive(false);
             }
         }
@@ -49,11 +36,7 @@ public class Buy_Menu : MonoBehaviour {
         {
             if(menu.activeSelf)
             {
-                if (track_type == 0)
-                    m_track.enabled = true;
-                else if (track_type == 1)
-                    p_track.enabled = true;
-                track_type = -1;
+                enable_Camera();
                 menu.SetActive(false);
             }
         }
@@ -72,23 +55,23 @@ public class Buy_Menu : MonoBehaviour {
 
     public void create_order(int num_boxes)
     {
-        StartCoroutine(Find_Zone());
-        if(box_to_place != null)
-            deliv_zone.GetComponent<Place_Boxes>().create_boxes(num_boxes, box_to_place);
+        StartCoroutine(Set_Zone(num_boxes));
+
     }
 
-    private IEnumerator Find_Zone()
+    private IEnumerator Set_Zone(int num_boxes)
     {
         RaycastHit2D r_hit;
-
+        menu.SetActive(false);
+        enable_Camera();
         while(true)
         {
-            r_hit = Physics2D.Raycast(new Vector2(Input.mousePosition.x, Input.mousePosition.y), Vector2.zero);
+            r_hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)), Vector2.zero);
             if(r_hit)
             {
                 if(r_hit.collider.gameObject.tag == "Delivery")
                 {
-                    if(r_hit.collider.GetComponent<Place_Boxes>().box != null)
+                    if(r_hit.collider.GetComponent<Place_Boxes>().box == null)
                     {
                         //highlight here?
                         if(Input.GetMouseButtonDown(0))
@@ -100,8 +83,34 @@ public class Buy_Menu : MonoBehaviour {
 
                 }
             }
+            yield return new WaitForSeconds(0.001f);
         }
+        if (box_to_place != null)
+            StartCoroutine(deliv_zone.GetComponent<Place_Boxes>().create_boxes(num_boxes, box_to_place));
+        
+        box_to_place = null;
+    }
 
-        yield return new WaitForSeconds(0.1f);
+    private void disable_Camera()
+    {
+        if (m_track.enabled)
+        {
+            m_track.enabled = false;
+            track_type = 0;
+        }
+        else if (p_track.enabled)
+        {
+            p_track.enabled = false;
+            track_type = 1;
+        }
+    }
+
+    private void enable_Camera()
+    {
+        if (track_type == 0)
+            m_track.enabled = true;
+        else if (track_type == 1)
+            p_track.enabled = true;
+        track_type = -1;
     }
 }

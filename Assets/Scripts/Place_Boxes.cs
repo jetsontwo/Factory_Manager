@@ -18,6 +18,7 @@ public class Place_Boxes : MonoBehaviour {
 
     public IEnumerator create_boxes(int num_boxes, GameObject type_of_box)
     {
+        box = type_of_box;
         for(int i = 0; i < num_boxes; ++i)
         {
             GameObject new_box = Instantiate(type_of_box, transform.position, Quaternion.identity, box_parent);
