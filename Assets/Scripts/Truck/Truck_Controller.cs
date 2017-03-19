@@ -11,7 +11,7 @@ public class Truck_Controller : MonoBehaviour {
     private SpriteRenderer load_spot_sprite;
     public GameObject load_spot;
     public float x_space, y_space, max_vel, accel, wait_time;
-    private int cur_boxes_index = 0;
+    public int cur_boxes_index = 0, max_size;
     private GameObject[] boxes;
     private Vector2 init_location;
     private Rigidbody2D rb;
@@ -21,7 +21,8 @@ public class Truck_Controller : MonoBehaviour {
     void Start()
     {
         init_location = new Vector2(transform.position.x + 2.35f, transform.position.y + 0.5f);
-        boxes = new GameObject[spaces_x * spaces_y];
+        max_size = spaces_x * spaces_y;
+        boxes = new GameObject[max_size];
         rb = GetComponent<Rigidbody2D>();
         current = GetComponent<SpriteRenderer>();
         original = transform.position.x;
@@ -41,6 +42,7 @@ public class Truck_Controller : MonoBehaviour {
             int y_offset = cur_boxes_index % spaces_y;
 
             box.transform.position = new Vector2(init_location.x - (x_offset * x_space), init_location.y - (y_offset * y_space));
+            boxes[cur_boxes_index] = box;
             cur_boxes_index++;
         }
         if (cur_boxes_index == (spaces_x * spaces_y))
@@ -55,6 +57,8 @@ public class Truck_Controller : MonoBehaviour {
 
     IEnumerator send_truck()
     {
+        Transform old_parent = transform.parent;
+        transform.parent = null;
         load_spot_sprite = load_spot.GetComponent<SpriteRenderer>();
         while (load_spot_sprite.color.a > 0)
         {
@@ -77,7 +81,8 @@ public class Truck_Controller : MonoBehaviour {
         /////////////////////////Sell things here/////////////////////////////////////
 
         mc.add_cash(cur_boxes_index * 10);    // need the box prices here
-        foreach(GameObject box in boxes)
+        cur_boxes_index = 0;
+        foreach (GameObject box in boxes)
             Destroy(box);
         
         rb.velocity = -fast;
@@ -98,6 +103,7 @@ public class Truck_Controller : MonoBehaviour {
             load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a + 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
+        transform.parent = old_parent;
     }
 
 

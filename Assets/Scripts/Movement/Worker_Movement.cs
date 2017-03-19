@@ -58,25 +58,41 @@ public class Worker_Movement : MonoBehaviour {
             else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
                 to_return = drop_zone.gameObject;
         }
+        if(to_return != null)
+        {
+            Truck_Controller tc = to_return.transform.parent.GetComponent<Truck_Controller>();
+            if (tc.cur_boxes_index + 1 >= tc.max_size)
+                to_return = null;
+        }            //////////////////////////////////////////////////////////////////WRITE SYSTEM SO NUMBER OF BOXES TRUCK HAS INCREASES ONCE WORKER SEES THEM
         return to_return;
     }
 
+
+
     IEnumerator Idle()
     {
-        while(true)
+        if (work.holding_box())
         {
-            GameObject found_box = find_box();
-            if (found_box != null)
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(drop_off_box());
+        }
+        else
+        {
+            while (true)
             {
-                StartCoroutine(walk_to_box(found_box));
-                found_box.transform.parent = null;
-                break;
+                GameObject found_box = find_box();
+                if (found_box != null)
+                {
+                    StartCoroutine(walk_to_box(found_box));
+                    found_box.transform.parent = null;
+                    break;
+                }
+                Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
+                StartCoroutine(move.go_to_pos(next_pos));
+                yield return new WaitUntil(move.at_pos);
+                move.move(0, 0);
+                yield return new WaitForSeconds(Random.Range(1f, 3f));
             }
-            Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
-            StartCoroutine(move.go_to_pos(next_pos));
-            yield return new WaitUntil(move.at_pos);
-            move.move(0, 0);
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
         }
     }
 
@@ -99,9 +115,12 @@ public class Worker_Movement : MonoBehaviour {
         if (work.holding_box())
         {
             GameObject found_truck = find_zone();
-            StartCoroutine(move.go_to_pos(found_truck.transform.position));
-            yield return new WaitUntil(move.at_pos);
-            work.interact_with_object();
+            if (found_truck != null)
+            {
+                StartCoroutine(move.go_to_pos(found_truck.transform.position));
+                yield return new WaitUntil(move.at_pos);
+                work.interact_with_object();
+            }
         }
         StartCoroutine(Idle());
     }
