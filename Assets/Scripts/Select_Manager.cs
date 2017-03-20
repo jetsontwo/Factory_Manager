@@ -10,6 +10,7 @@ public class Select_Manager : MonoBehaviour {
     private Movement cur_move;
     private Camera_Track_Player t_player;
     private Camera_Track_Mouse t_mouse;
+    private Worker_Stats ws;
 
 	// Use this for initialization
 	void Start () {
@@ -29,22 +30,41 @@ public class Select_Manager : MonoBehaviour {
                     //set_manager(r_hit.collider.gameObject);
                     if (cur_manager != null)
                         deselect_manager();
-                    r_hit.collider.GetComponent<Worker_Stats>().show_stats();
+                    ws = r_hit.collider.GetComponent<Worker_Stats>();
+                    ws.show_stats();
                     //track_player(cur_manager);
                     track_player(r_hit.collider.gameObject);
                 }
             }
             else
             {
-                if(cur_manager != null)
-                {
-                    deselect_manager();
-                    track_mouse();
-                }
+                //if (ws != null)
+                //{
+                //    ws.close_stats();
+                //    ws = null;
+                //    track_mouse();
+                //}                         //////////////Attempt at closing window if player clicks away from window
+                //if (cur_manager != null)
+                //{
+                //    deselect_manager();
+                //    track_mouse();
+                //}                         //////////Deselct if it hits nothing
+ 
+
+
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ws != null)
+            {
+                ws.close_stats();
+                ws = null;
+                track_mouse();
             }
         }
 
-	}
+    }
 
 
     void track_mouse()

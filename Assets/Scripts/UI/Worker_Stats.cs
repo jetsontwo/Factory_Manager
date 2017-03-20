@@ -24,4 +24,9 @@ public class Worker_Stats : MonoBehaviour {
                 t.GetComponent<Button>().onClick.AddListener(()=> { sm.set_manager(gameObject); });
         }
     }
+
+    public void close_stats()
+    {
+        stats_panel.SetActive(false);
+    }
 }
