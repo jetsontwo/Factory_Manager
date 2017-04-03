@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Worker_Movement : MonoBehaviour {
 
-    public Transform box_list, truck_list;
+    public Transform trash_loc, truck_list;
     private Vector3 target = Vector3.zero;
     private Movement move;
     private Worker work;
+    private Worker_Stats stats;
 
     void OnEnable()
     {
@@ -15,6 +16,8 @@ public class Worker_Movement : MonoBehaviour {
             work = GetComponent<Worker>();
         if (move == null)
             move = GetComponent<Movement>();
+        if (stats == null)
+            stats = GetComponent<Worker_Stats>();
         StartCoroutine(enable());
     }
 
@@ -26,28 +29,16 @@ public class Worker_Movement : MonoBehaviour {
     IEnumerator enable()
     {
         yield return new WaitUntil(move.is_enabled);
-        if (work.holding_box())
-            StartCoroutine(drop_off_box());
+        if (work.holding_item())
+            StartCoroutine(drop_off_item());
         else
-            StartCoroutine(Idle());
-    }
-
-    private GameObject find_box()
-    {
-
-        GameObject to_return = null;
-        foreach (Transform box in box_list)
-        {
-            if (to_return == null)
-                to_return = box.gameObject;
-            else if ((transform.position - box.position).magnitude < (transform.position - to_return.transform.position).magnitude)
-                to_return = box.gameObject;
-        }
-        return to_return;
+            StartCoroutine(Go_to_Trash());
     }
 
     private GameObject find_zone()
     {
+        ///////////////////////////////NEED TO OVERHAUL ONCE TAGS ARE IN PLACE TO FIND DESINATION OF TAG/////////////////////////////////////
+
         
         GameObject to_return = null;
         foreach(Transform truck in truck_list)
@@ -69,50 +60,74 @@ public class Worker_Movement : MonoBehaviour {
 
 
 
-    IEnumerator Idle()
+    ////////////////////////////////////////////////  ASSIGNED TO TRASH   ////////////////////////////////////////////////
+
+    IEnumerator Go_to_Trash()
     {
-        if (work.holding_box())
+        if (work.holding_item())
         {
             yield return new WaitForSeconds(2f);
-            StartCoroutine(drop_off_box());
+            StartCoroutine(drop_off_item());
         }
         else
         {
-            while (true)
-            {
-                GameObject found_box = find_box();
-                if (found_box != null)
-                {
-                    StartCoroutine(walk_to_box(found_box));
-                    found_box.transform.parent = null;
-                    break;
-                }
-                Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
-                StartCoroutine(move.go_to_pos(next_pos));
-                yield return new WaitUntil(move.at_pos);
-                move.move(0, 0);
-                yield return new WaitForSeconds(Random.Range(1f, 3f));
-            }
+            StartCoroutine(move.go_to_pos(new Vector2(trash_loc.position.x + Random.Range(-1f,1f), trash_loc.position.y + Random.Range(-1f, 1f))));
+            yield return new WaitUntil(move.at_pos);
+            move.move(0, 0);
+            StartCoroutine(search_trash());
         }
     }
 
-    IEnumerator walk_to_box(GameObject box)
+    IEnumerator search_trash()
     {
-        StartCoroutine(move.go_to_pos(box.transform.position));
+
+        ////PLAY SEARCHING ANIMATION
+        yield return new WaitForSeconds(4 - (float) (stats.scavenging * 0.25));
+        //STOP SEARCHING ANIMATION
+        //CHECK TO SEE IF NEW ITEM, IF SO THEN SHOW THE NOTIFICATION
+        GameObject new_mat = trash_loc.GetComponent<Material_Producer>().get_random_item();
+        new_mat.transform.parent = transform;
+        new_mat.transform.localPosition = new Vector2(0, 0);
+    }
+
+    ////////////////////////////////////////////////  UNASSIGNED   ////////////////////////////////////////////////
+
+
+    IEnumerator Unasigned()
+    {
+        ////////////////////////Need to fix so player can stop it at any time (use stopallcoroutines when the player picks them up)
+        Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
+        StartCoroutine(move.go_to_pos(next_pos));
         yield return new WaitUntil(move.at_pos);
         move.move(0, 0);
-        if (box.transform.parent == null)
-        {
-            work.pickup_item(box);
-            StartCoroutine(drop_off_box());
-        }
-        else
-            StartCoroutine(Idle());
+        yield return new WaitForSeconds(Random.Range(1f, 3f));
     }
 
-    IEnumerator drop_off_box()
+    ////////////////////////////////////////////////  ASSIGNED TO STORAGE   ////////////////////////////////////////////////
+
+
+
+    IEnumerator search_for_request()
     {
-        if (work.holding_box())
+        yield return new WaitForSeconds(1f);
+    }
+    //IEnumerator walk_to_box(GameObject box)
+    //{
+    //    StartCoroutine(move.go_to_pos(box.transform.position));
+    //    yield return new WaitUntil(move.at_pos);
+    //    move.move(0, 0);
+    //    if (box.transform.parent == null)
+    //    {
+    //        work.pickup_item(box);
+    //        StartCoroutine(drop_off_item());
+    //    }
+    //    else
+    //        StartCoroutine(Go_to_Trash());
+    //}
+
+    IEnumerator drop_off_item()
+    {
+        if (work.holding_item())
         {
             GameObject found_truck = find_zone();
             if (found_truck != null)
@@ -122,6 +137,6 @@ public class Worker_Movement : MonoBehaviour {
                 work.interact_with_object();
             }
         }
-        StartCoroutine(Idle());
+        StartCoroutine(Go_to_Trash());
     }
 }

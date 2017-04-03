@@ -6,8 +6,18 @@ using UnityEngine.UI;
 public class Worker_Stats : MonoBehaviour {
 
     public string worker_name, age, quote;
+    public int scavenging, transportation, assembly;
     public GameObject stats_panel;
     public Select_Manager sm;
+
+    void OnEnable()
+    {
+
+        ///////////MAKE INTO A NORMAL CURVE SO HIGHER STATS ARE LESS LIKELY
+        scavenging = Random.Range(1, 5);
+        transportation = Random.Range(1, 5);
+        assembly = Random.Range(1, 5);
+    }
 
     public void show_stats()
     {

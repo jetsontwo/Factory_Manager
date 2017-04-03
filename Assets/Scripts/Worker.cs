@@ -8,7 +8,7 @@ public class Worker : MonoBehaviour {
     private AudioSource source;
     private bool holding;
     private GameObject holdable_object;
-    public Transform boxes_parent;
+    public Transform item_parent;
     public float held_object_offset;
 
     void Start()
@@ -37,19 +37,19 @@ public class Worker : MonoBehaviour {
         if (search.transform == null)
         {
             obj.transform.position = new_pos;
-            obj.transform.parent = boxes_parent;
+            obj.transform.parent = item_parent;
         }
         else if (search.transform.tag == "Out_of_Bounds")
         {
             obj.transform.position = gameObject.transform.position;
-            obj.transform.parent = boxes_parent;
+            obj.transform.parent = item_parent;
         }
         else if (search.transform.tag == "Truck")
             search.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
         else
         {
             obj.transform.position = new_pos;
-            obj.transform.parent = boxes_parent;
+            obj.transform.parent = item_parent;
         }
 
         holding = false;
@@ -70,14 +70,14 @@ public class Worker : MonoBehaviour {
             
     }
 
-    public bool holding_box()
+    public bool holding_item()
     {
         return holding;
     }
 
     void OnTriggerStay2D(Collider2D c)
     {
-        if (c.CompareTag("Box") && !holding)
+        if (c.CompareTag("Item") && !holding)
             holdable_object = c.gameObject;
     }
     void OnTriggerExit2D(Collider2D c)
