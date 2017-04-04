@@ -88,6 +88,21 @@ public class Worker_Movement : MonoBehaviour {
         GameObject new_mat = trash_loc.GetComponent<Material_Producer>().get_random_item();
         new_mat.transform.parent = transform;
         new_mat.transform.localPosition = new Vector2(0, 0);
+
+        Transform tag_dest = trash_loc.GetComponent<Material_Producer>().get_tag_dest(new_mat.GetComponent<Item_ID>().ID);
+
+        if (tag_dest != null)
+        {
+            StartCoroutine(move.go_to_pos(tag_dest.GetComponent<Tag_Controller>().destination.transform.position));
+            yield return new WaitUntil(move.at_pos);
+            work.drop_item(new_mat);
+            StartCoroutine(Go_to_Trash());
+        }
+        else
+        {
+            ////////// SHOW QUESTION MARK THINKING BUBBLE
+        }
+
     }
 
     ////////////////////////////////////////////////  UNASSIGNED   ////////////////////////////////////////////////
