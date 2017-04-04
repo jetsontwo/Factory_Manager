@@ -30,33 +30,12 @@ public class Worker_Movement : MonoBehaviour {
     {
         yield return new WaitUntil(move.is_enabled);
         if (work.holding_item())
-            StartCoroutine(drop_off_item());
+            StartCoroutine(drop_off_item(work.holdable_object));
         else
             StartCoroutine(Go_to_Trash());
     }
 
-    private GameObject find_zone()
-    {
-        ///////////////////////////////NEED TO OVERHAUL ONCE TAGS ARE IN PLACE TO FIND DESINATION OF TAG/////////////////////////////////////
-
-        
-        GameObject to_return = null;
-        foreach(Transform truck in truck_list)
-        {
-            Transform drop_zone = truck.FindChild("Drop_Off");
-            if (to_return == null)
-                to_return = drop_zone.gameObject;
-            else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
-                to_return = drop_zone.gameObject;
-        }
-        if(to_return != null)
-        {
-            Truck_Controller tc = to_return.transform.parent.GetComponent<Truck_Controller>();
-            if (tc.cur_boxes_index + 1 >= tc.max_size)
-                to_return = null;
-        }            //////////////////////////////////////////////////////////////////WRITE SYSTEM SO NUMBER OF BOXES TRUCK HAS INCREASES ONCE WORKER SEES THEM
-        return to_return;
-    }
+    
 
 
 
@@ -67,7 +46,7 @@ public class Worker_Movement : MonoBehaviour {
         if (work.holding_item())
         {
             yield return new WaitForSeconds(2f);
-            StartCoroutine(drop_off_item());
+            StartCoroutine(drop_off_item(work.holdable_object));
         }
         else
         {
@@ -89,19 +68,7 @@ public class Worker_Movement : MonoBehaviour {
         new_mat.transform.parent = transform;
         new_mat.transform.localPosition = new Vector2(0, 0);
 
-        Transform tag_dest = trash_loc.GetComponent<Material_Producer>().get_tag_dest(new_mat.GetComponent<Item_ID>().ID);
-
-        if (tag_dest != null)
-        {
-            StartCoroutine(move.go_to_pos(tag_dest.GetComponent<Tag_Controller>().destination.transform.position));
-            yield return new WaitUntil(move.at_pos);
-            work.drop_item(new_mat);
-            StartCoroutine(Go_to_Trash());
-        }
-        else
-        {
-            ////////// SHOW QUESTION MARK THINKING BUBBLE
-        }
+        StartCoroutine(drop_off_item(new_mat));
 
     }
 
@@ -126,32 +93,49 @@ public class Worker_Movement : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
     }
-    //IEnumerator walk_to_box(GameObject box)
-    //{
-    //    StartCoroutine(move.go_to_pos(box.transform.position));
-    //    yield return new WaitUntil(move.at_pos);
-    //    move.move(0, 0);
-    //    if (box.transform.parent == null)
-    //    {
-    //        work.pickup_item(box);
-    //        StartCoroutine(drop_off_item());
-    //    }
-    //    else
-    //        StartCoroutine(Go_to_Trash());
-    //}
 
-    IEnumerator drop_off_item()
+
+    /////////////////////////////////////////////////   HELPER FUNCTIONS    ///////////////////////////////////////////////////
+
+
+
+    private GameObject find_zone()
     {
-        if (work.holding_item())
+        ///////////////////////////////NEED TO OVERHAUL ONCE TAGS ARE IN PLACE TO FIND DESINATION OF TAG/////////////////////////////////////
+
+
+        GameObject to_return = null;
+        foreach (Transform truck in truck_list)
         {
-            GameObject found_truck = find_zone();
-            if (found_truck != null)
-            {
-                StartCoroutine(move.go_to_pos(found_truck.transform.position));
-                yield return new WaitUntil(move.at_pos);
-                work.interact_with_object();
-            }
+            Transform drop_zone = truck.FindChild("Drop_Off");
+            if (to_return == null)
+                to_return = drop_zone.gameObject;
+            else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
+                to_return = drop_zone.gameObject;
         }
-        StartCoroutine(Go_to_Trash());
+        if (to_return != null)
+        {
+            Truck_Controller tc = to_return.transform.parent.GetComponent<Truck_Controller>();
+            if (tc.cur_boxes_index + 1 >= tc.max_size)
+                to_return = null;
+        }            //////////////////////////////////////////////////////////////////WRITE SYSTEM SO NUMBER OF BOXES TRUCK HAS INCREASES ONCE WORKER SEES THEM
+        return to_return;
+    }
+
+    IEnumerator drop_off_item(GameObject item)
+    {
+        GameObject tag_dest = trash_loc.GetComponent<Material_Producer>().get_tag_dest(item.GetComponent<Item_ID>().ID);
+
+        if (tag_dest != null)
+        {
+            StartCoroutine(move.go_to_pos(tag_dest.transform.position));
+            yield return new WaitUntil(move.at_pos);
+            work.drop_item(item, tag_dest.gameObject);
+            StartCoroutine(Go_to_Trash());
+        }
+        else
+        {
+            ////////// SHOW QUESTION MARK THINKING BUBBLE
+        }
     }
 }

@@ -17,14 +17,14 @@ public class Material_Producer : MonoBehaviour {
         return Instantiate(item);
     }
     
-    public Transform get_tag_dest(int id)
+    public GameObject get_tag_dest(int id)
     {
-        Transform to_return = null;
+        GameObject to_return = null;
         foreach(Tag_Controller tc in tags)
         {
             if (tc.id_of_object == id)
             {
-                to_return = tc.transform;
+                to_return = tc.destination;
                 break;
             }
         }
