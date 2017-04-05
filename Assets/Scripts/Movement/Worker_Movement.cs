@@ -9,6 +9,7 @@ public class Worker_Movement : MonoBehaviour {
     private Movement move;
     private Worker work;
     private Worker_Stats stats;
+    public string assignment = "None";
 
     void OnEnable()
     {
@@ -32,7 +33,16 @@ public class Worker_Movement : MonoBehaviour {
         if (work.holding_item())
             StartCoroutine(drop_off_item(work.holdable_object));
         else
-            StartCoroutine(Go_to_Trash());
+        {
+            if (assignment == "None")
+                StartCoroutine(Wander());
+            else if (assignment == "Storage")
+                StartCoroutine(search_for_request());
+            else if (assignment == "Trash")
+                StartCoroutine(Go_to_Trash());
+            else if (assignment == "Station")
+                StartCoroutine(Craft());
+        }
     }
 
     
@@ -75,14 +85,20 @@ public class Worker_Movement : MonoBehaviour {
     ////////////////////////////////////////////////  UNASSIGNED   ////////////////////////////////////////////////
 
 
-    IEnumerator Unasigned()
+    IEnumerator Wander()
     {
         ////////////////////////Need to fix so player can stop it at any time (use stopallcoroutines when the player picks them up)
-        Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
-        StartCoroutine(move.go_to_pos(next_pos));
-        yield return new WaitUntil(move.at_pos);
-        move.move(0, 0);
-        yield return new WaitForSeconds(Random.Range(1f, 3f));
+        while(true)
+        {
+            Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));
+            if(!Physics2D.Raycast(next_pos, Vector2.zero))
+            {
+                StartCoroutine(move.go_to_pos(next_pos));
+                yield return new WaitUntil(move.at_pos);
+                move.move(0, 0);
+                yield return new WaitForSeconds(Random.Range(1f, 3f));
+            }
+        }
     }
 
     ////////////////////////////////////////////////  ASSIGNED TO STORAGE   ////////////////////////////////////////////////
@@ -93,6 +109,15 @@ public class Worker_Movement : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
     }
+
+
+    ////////////////////////////////////////////////  ASSIGNED TO STATION   ////////////////////////////////////////////////
+
+    IEnumerator Craft()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
 
 
     /////////////////////////////////////////////////   HELPER FUNCTIONS    ///////////////////////////////////////////////////
