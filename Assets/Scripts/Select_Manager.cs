@@ -74,6 +74,8 @@ public class Select_Manager : MonoBehaviour {
         yield return new WaitUntil(() => !Input.GetMouseButton(0));
         StopCoroutine(enumer);
         ws.close_stats();
+
+        worker.GetComponent<Worker_Movement>().change_assignment(get_new_assignment(worker.transform.position));
     }
 
     IEnumerator attach_worker_to_mouse(GameObject worker)
@@ -86,6 +88,35 @@ public class Select_Manager : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
     }
+
+
+    private string get_new_assignment(Vector2 pos)
+    {
+        RaycastHit2D rh2_hit = Physics2D.Raycast(pos, Vector2.zero, 0f, ~(1 << 10));
+        string to_return = "None";
+        if(rh2_hit.collider != null)
+        {
+            print(rh2_hit.collider.tag);
+            if (rh2_hit.collider.tag == "Trash")
+                to_return = "Trash";
+            else if (rh2_hit.collider.tag == "Station")
+                to_return = "Station";   //////// MAKE THE WORKER APPEAR BEHIND THE STATION
+            else if (rh2_hit.collider.tag == "Storage")
+                to_return = "Storage";
+        }
+        print(to_return);
+        return to_return;
+    }
+
+
+
+
+
+
+
+
+
+
 
     void track_mouse()
     {

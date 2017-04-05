@@ -163,4 +163,12 @@ public class Worker_Movement : MonoBehaviour {
             ////////// SHOW QUESTION MARK THINKING BUBBLE
         }
     }
+
+
+    public void change_assignment(string new_assignment)
+    {
+        StopAllCoroutines();
+        assignment = new_assignment;
+        StartCoroutine(enable());
+    }
 }
