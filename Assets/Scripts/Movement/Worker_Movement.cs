@@ -169,6 +169,7 @@ public class Worker_Movement : MonoBehaviour {
     {
         StopAllCoroutines();
         assignment = new_assignment;
+        move.move(0, 0);
         StartCoroutine(enable());
     }
 }

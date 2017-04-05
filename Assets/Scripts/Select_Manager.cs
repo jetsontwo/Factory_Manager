@@ -75,7 +75,7 @@ public class Select_Manager : MonoBehaviour {
         StopCoroutine(enumer);
         ws.close_stats();
 
-        worker.GetComponent<Worker_Movement>().change_assignment(get_new_assignment(worker.transform.position));
+        worker.GetComponent<Worker_Movement>().change_assignment(get_new_assignment(worker));
     }
 
     IEnumerator attach_worker_to_mouse(GameObject worker)
@@ -90,9 +90,9 @@ public class Select_Manager : MonoBehaviour {
     }
 
 
-    private string get_new_assignment(Vector2 pos)
+    private string get_new_assignment(GameObject worker)
     {
-        RaycastHit2D rh2_hit = Physics2D.Raycast(pos, Vector2.zero, 0f, ~(1 << 10));
+        RaycastHit2D rh2_hit = Physics2D.Raycast(worker.transform.position, Vector2.zero, 0f, ~(1 << 10));
         string to_return = "None";
         if(rh2_hit.collider != null)
         {
@@ -100,7 +100,10 @@ public class Select_Manager : MonoBehaviour {
             if (rh2_hit.collider.tag == "Trash")
                 to_return = "Trash";
             else if (rh2_hit.collider.tag == "Station")
+            {
                 to_return = "Station";   //////// MAKE THE WORKER APPEAR BEHIND THE STATION
+                rh2_hit.collider.GetComponent<Station_Controller>().change_worker(worker);
+            }
             else if (rh2_hit.collider.tag == "Storage")
                 to_return = "Storage";
         }
