@@ -27,13 +27,7 @@ public class Select_Manager : MonoBehaviour {
             {
                 if (r_hit.collider.gameObject.tag == "Worker")
                 {
-                    //set_manager(r_hit.collider.gameObject);
-                    if (cur_manager != null)
-                        deselect_manager();
-                    ws = r_hit.collider.GetComponent<Worker_Stats>();
-                    ws.show_stats();
-                    //track_player(cur_manager);
-                    track_player(r_hit.collider.gameObject);
+                    StartCoroutine(pick_up_worker(r_hit.collider.gameObject));
                 }
             }
             else
@@ -66,6 +60,32 @@ public class Select_Manager : MonoBehaviour {
 
     }
 
+    IEnumerator pick_up_worker(GameObject worker)
+    {
+        //set_manager(r_hit.collider.gameObject);
+        if (cur_manager != null)
+            deselect_manager();
+        ws = r_hit.collider.GetComponent<Worker_Stats>();
+        ws.show_stats();
+        //track_player(cur_manager);
+        //track_player(r_hit.collider.gameObject);
+        IEnumerator enumer = attach_worker_to_mouse(worker);
+        StartCoroutine(enumer);
+        yield return new WaitUntil(() => !Input.GetMouseButton(0));
+        StopCoroutine(enumer);
+        ws.close_stats();
+    }
+
+    IEnumerator attach_worker_to_mouse(GameObject worker)
+    {
+        while(true)
+        {
+            worker.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+
+            // Do floppy physics here to worker moves around and flops around as the player drags them
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 
     void track_mouse()
     {
