@@ -10,6 +10,7 @@ public class Worker_Movement : MonoBehaviour {
     private Worker work;
     private Worker_Stats stats;
     public string assignment = "None";
+    public GameObject assigned_to_gameobject = null;
 
     void OnEnable()
     {
@@ -113,8 +114,9 @@ public class Worker_Movement : MonoBehaviour {
 
     ////////////////////////////////////////////////  ASSIGNED TO STATION   ////////////////////////////////////////////////
 
-    IEnumerator Craft()
+    public IEnumerator Craft()
     {
+        print(name);
         yield return new WaitForSeconds(1f);
     }
 
@@ -165,10 +167,14 @@ public class Worker_Movement : MonoBehaviour {
     }
 
 
-    public void change_assignment(string new_assignment)
+    public void change_assignment(string new_assignment, GameObject new_assignment_gameobject = null)
     {
         StopAllCoroutines();
         assignment = new_assignment;
+        if (assignment == "Station" || assignment == "Storage")
+            assigned_to_gameobject = new_assignment_gameobject;
+        else
+            assigned_to_gameobject = null;
         move.move(0, 0);
         StartCoroutine(enable());
     }
