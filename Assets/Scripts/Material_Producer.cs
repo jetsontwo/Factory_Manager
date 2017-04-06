@@ -12,7 +12,7 @@ public class Material_Producer : MonoBehaviour {
 	
     public GameObject get_random_item()
     {
-        float rand_num = Random.Range(0, 100f);
+        //float rand_num = Random.Range(0, 100f);
         GameObject item = material_ids[0];
         return Instantiate(item);
     }

@@ -116,8 +116,12 @@ public class Worker_Movement : MonoBehaviour {
 
     public IEnumerator Craft()
     {
-        print(name);
-        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            Station_Controller sc = assigned_to_gameobject.GetComponent<Station_Controller>();
+            yield return new WaitUntil(sc.can_craft);
+            print("fkljl;j");
+        }        
     }
 
 
@@ -126,28 +130,28 @@ public class Worker_Movement : MonoBehaviour {
 
 
 
-    private GameObject find_zone()
-    {
-        ///////////////////////////////NEED TO OVERHAUL ONCE TAGS ARE IN PLACE TO FIND DESINATION OF TAG/////////////////////////////////////
+    //private GameObject find_zone()
+    //{
+    //    ///////////////////////////////NEED TO OVERHAUL ONCE TAGS ARE IN PLACE TO FIND DESINATION OF TAG/////////////////////////////////////
 
 
-        GameObject to_return = null;
-        foreach (Transform truck in truck_list)
-        {
-            Transform drop_zone = truck.FindChild("Drop_Off");
-            if (to_return == null)
-                to_return = drop_zone.gameObject;
-            else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
-                to_return = drop_zone.gameObject;
-        }
-        if (to_return != null)
-        {
-            Truck_Controller tc = to_return.transform.parent.GetComponent<Truck_Controller>();
-            if (tc.cur_boxes_index + 1 >= tc.max_size)
-                to_return = null;
-        }            //////////////////////////////////////////////////////////////////WRITE SYSTEM SO NUMBER OF BOXES TRUCK HAS INCREASES ONCE WORKER SEES THEM
-        return to_return;
-    }
+    //    GameObject to_return = null;
+    //    foreach (Transform truck in truck_list)
+    //    {
+    //        Transform drop_zone = truck.FindChild("Drop_Off");
+    //        if (to_return == null)
+    //            to_return = drop_zone.gameObject;
+    //        else if ((transform.position - drop_zone.position).magnitude < (transform.position - to_return.transform.position).magnitude)
+    //            to_return = drop_zone.gameObject;
+    //    }
+    //    if (to_return != null)
+    //    {
+    //        Truck_Controller tc = to_return.transform.parent.GetComponent<Truck_Controller>();
+    //        if (tc.cur_boxes_index + 1 >= tc.max_size)
+    //            to_return = null;
+    //    }            //////////////////////////////////////////////////////////////////WRITE SYSTEM SO NUMBER OF BOXES TRUCK HAS INCREASES ONCE WORKER SEES THEM
+    //    return to_return;
+    //}
 
     IEnumerator drop_off_item(GameObject item)
     {
@@ -171,6 +175,11 @@ public class Worker_Movement : MonoBehaviour {
     {
         StopAllCoroutines();
         assignment = new_assignment;
+        if(assignment != "Station")
+        {
+            GetComponent<SpriteRenderer>().sortingLayerName = "Workers";
+            GetComponent<SpriteRenderer>().sortingOrder = 0;
+        }
         if (assignment == "Station" || assignment == "Storage")
             assigned_to_gameobject = new_assignment_gameobject;
         else

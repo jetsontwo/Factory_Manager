@@ -10,8 +10,8 @@ public class Camera_Track_Player : MonoBehaviour {
     private Vector3 next_spot;
     void Start()
     {
-        float vert_size = Camera.main.orthographicSize;
-        float horz_size = vert_size * Screen.width / Screen.height;
+        //float vert_size = Camera.main.orthographicSize;
+        //float horz_size = vert_size * Screen.width / Screen.height;
     }
 
     // Update is called once per frame

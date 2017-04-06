@@ -32,7 +32,6 @@ public class Worker : MonoBehaviour {
         source.Play();
         Vector3 new_pos = obj.transform.position;
         new_pos += new Vector3((transform.rotation.eulerAngles.y == 180 ? held_object_offset : -held_object_offset), 0, 0);
-        print(dest + dest.tag);
         if (dest == null)
         {
             obj.transform.position = gameObject.transform.position;

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Station_Controller : MonoBehaviour {
 
-    public Dictionary<GameObject, int> recipe = new Dictionary<GameObject, int>(), cur_items = new Dictionary<GameObject, int>();
-    public GameObject worker;
+    public Dictionary<int, int> recipe = new Dictionary<int, int>(), cur_items = new Dictionary<int, int>();
+    private GameObject worker;
     public Material_Producer mat_list;
+    private bool has_items;
     
 
     void Start()
     {
-        Dictionary<GameObject, int> new_recipe = new Dictionary<GameObject, int>();
-        new_recipe.Add(mat_list.material_ids[0], 3);
+        Dictionary<int, int> new_recipe = new Dictionary<int, int>();
+        new_recipe.Add(1, 3);
         set_recipe(new_recipe);
     }
 
@@ -36,31 +37,38 @@ public class Station_Controller : MonoBehaviour {
     {
         item.transform.parent = transform;
         item.transform.localPosition = Vector2.zero;
-        if (cur_items.ContainsKey(item))
-            cur_items[item] = cur_items[item]++;
+        int item_id = item.GetComponent<Item_ID>().ID;
+        if (cur_items.ContainsKey(item_id))
+            cur_items[item_id]++;
         else
-            cur_items.Add(item, 1);
-        print(cur_items[item]);
+            cur_items.Add(item_id, 1);
+        has_items = check_can_craft();
     }
 
-    public void set_recipe(Dictionary<GameObject, int> new_recipe)
+    public void set_recipe(Dictionary<int, int> new_recipe)
     {
         recipe = new_recipe;
     }
 
-    void Update()
+    public bool can_craft()
     {
-        bool can_craft = false;
+        return has_items;
+    }
+
+
+    private bool check_can_craft()
+    {
+        bool can_craft = true;
 
         //check to make sure there is an active recipe
-        if (recipe.Count > 0 && cur_items.Count > 0)
-            can_craft = true;
-        //if has enough and worker is still assigned there then craft
-        foreach (KeyValuePair<GameObject, int> key_val in recipe)
+        if (recipe.Count == 0)
+            return false;
+        //if has enough
+
+        foreach (KeyValuePair<int, int> key_val in recipe)
         {
             if (cur_items.ContainsKey(key_val.Key))
             {
-                print(cur_items[key_val.Key]);
                 if (cur_items[key_val.Key] < key_val.Value)
                 {
                     can_craft = false;
@@ -73,15 +81,6 @@ public class Station_Controller : MonoBehaviour {
                 break;
             }
         }
-        if (can_craft)
-        {
-            print("fjsdkal");
-            if (worker.GetComponent<Worker_Movement>().assigned_to_gameobject == gameObject)
-            {
-                StartCoroutine(worker.GetComponent<Worker_Movement>().Craft());
-                // subtract items from cur items and delete them from the table
-                print("jsdaflijsdalkfjsadlk;");
-            }
-        }
+        return can_craft;
     }
 }

@@ -29,6 +29,10 @@ public class Select_Manager : MonoBehaviour {
                 {
                     StartCoroutine(pick_up_worker(r_hit.collider.gameObject));
                 }
+                else if(r_hit.collider.gameObject.tag == "Control_Tag")
+                {
+                    //Put stuff here to move the tag around
+                }
             }
             else
             {
