@@ -7,6 +7,7 @@ public class Station_Controller : MonoBehaviour {
     public Dictionary<int, int> recipe = new Dictionary<int, int>();
     public GameObject finished_item;
     public Dictionary<int, List<GameObject>> cur_items = new Dictionary<int, List<GameObject>>();
+    public List<GameObject> finished_items = new List<GameObject>();
     private GameObject worker;
     public Material_Producer mat_list;
     private bool has_items;
@@ -91,7 +92,9 @@ public class Station_Controller : MonoBehaviour {
     {
         remove_items_from_craft();
 
-        Instantiate(finished_item, null);
+        GameObject item = Instantiate(finished_item, transform);
+        finished_items.Add(item);
+        item.transform.localPosition = new Vector2(0, 0 + (0.07f * finished_items.Count));
     }
 
     private void remove_items_from_craft()
@@ -100,7 +103,11 @@ public class Station_Controller : MonoBehaviour {
         {
             //Maybe deactivate items here instead of deleting???
             for (int i = 0; i < key_val.Value; ++i)
+            {
                 Destroy(cur_items[key_val.Key][cur_items[key_val.Key].Count - 1]);
+                cur_items[key_val.Key].RemoveAt(cur_items[key_val.Key].Count - 1);
+            }
         }
+        has_items = check_can_craft();
     }
 }
