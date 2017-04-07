@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Station_Controller : MonoBehaviour {
 
-    public Dictionary<int, int> recipe = new Dictionary<int, int>(), cur_items = new Dictionary<int, int>();
+    public Dictionary<int, int> recipe = new Dictionary<int, int>();
+    public Dictionary<int, List<GameObject>> cur_items = new Dictionary<int, List<GameObject>>();
     private GameObject worker;
     public Material_Producer mat_list;
     private bool has_items;
@@ -27,7 +28,7 @@ public class Station_Controller : MonoBehaviour {
         if(worker != null)
             worker.GetComponent<Worker_Movement>().change_assignment("None");
         worker = new_worker;
-        worker.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        worker.transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
         worker.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         worker.GetComponent<SpriteRenderer>().sortingOrder = -10;
         
@@ -36,12 +37,13 @@ public class Station_Controller : MonoBehaviour {
     public void add_item(GameObject item)
     {
         item.transform.parent = transform;
-        item.transform.localPosition = Vector2.zero;
         int item_id = item.GetComponent<Item_ID>().ID;
         if (cur_items.ContainsKey(item_id))
-            cur_items[item_id]++;
+            cur_items[item_id].Add(item);
         else
-            cur_items.Add(item_id, 1);
+            cur_items.Add(item_id, new List<GameObject> {item});
+        item.transform.localPosition = new Vector2(-0.3f, 0 + (0.07f * cur_items[item_id].Count));
+        item.transform.localRotation = Quaternion.identity;
         has_items = check_can_craft();
     }
 
@@ -69,7 +71,7 @@ public class Station_Controller : MonoBehaviour {
         {
             if (cur_items.ContainsKey(key_val.Key))
             {
-                if (cur_items[key_val.Key] < key_val.Value)
+                if (cur_items[key_val.Key].Count < key_val.Value)
                 {
                     can_craft = false;
                     break;
