@@ -5,6 +5,7 @@ using UnityEngine;
 public class Station_Controller : MonoBehaviour {
 
     public Dictionary<int, int> recipe = new Dictionary<int, int>();
+    public GameObject finished_item;
     public Dictionary<int, List<GameObject>> cur_items = new Dictionary<int, List<GameObject>>();
     private GameObject worker;
     public Material_Producer mat_list;
@@ -84,5 +85,22 @@ public class Station_Controller : MonoBehaviour {
             }
         }
         return can_craft;
+    }
+
+    public void create_finished_item()
+    {
+        remove_items_from_craft();
+
+        Instantiate(finished_item, null);
+    }
+
+    private void remove_items_from_craft()
+    {
+        foreach(KeyValuePair<int, int> key_val in recipe)
+        {
+            //Maybe deactivate items here instead of deleting???
+            for (int i = 0; i < key_val.Value; ++i)
+                Destroy(cur_items[key_val.Key][cur_items[key_val.Key].Count - 1]);
+        }
     }
 }

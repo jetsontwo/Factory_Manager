@@ -120,7 +120,9 @@ public class Worker_Movement : MonoBehaviour {
         {
             Station_Controller sc = assigned_to_gameobject.GetComponent<Station_Controller>();
             yield return new WaitUntil(sc.can_craft);
-            print("fkljl;j");
+            //Play animation for crafting here/////////////////////////////////////////////////////////////////////
+            yield return new WaitForSeconds(5f - (0.5f * stats.assembly));
+            sc.create_finished_item();
         }        
     }
 
