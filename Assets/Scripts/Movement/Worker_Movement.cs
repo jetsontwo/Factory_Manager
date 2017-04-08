@@ -88,7 +88,6 @@ public class Worker_Movement : MonoBehaviour {
 
     IEnumerator Wander()
     {
-        ////////////////////////Need to fix so player can stop it at any time (use stopallcoroutines when the player picks them up)
         while(true)
         {
             Vector2 next_pos = new Vector2(Random.Range(0f, 8f), Random.Range(0f, -5f));

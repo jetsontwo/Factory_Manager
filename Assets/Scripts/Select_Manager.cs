@@ -31,25 +31,8 @@ public class Select_Manager : MonoBehaviour {
                 }
                 else if(r_hit.collider.gameObject.tag == "Control_Tag")
                 {
-                    //Put stuff here to move the tag around
+                    StartCoroutine(pick_up_tag(r_hit.collider.gameObject));
                 }
-            }
-            else
-            {
-                //if (ws != null)
-                //{
-                //    ws.close_stats();
-                //    ws = null;
-                //    track_mouse();
-                //}                         //////////////Attempt at closing window if player clicks away from window
-                //if (cur_manager != null)
-                //{
-                //    deselect_manager();
-                //    track_mouse();
-                //}                         //////////Deselct if it hits nothing
- 
-
-
             }
         }
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -67,13 +50,13 @@ public class Select_Manager : MonoBehaviour {
     IEnumerator pick_up_worker(GameObject worker)
     {
         //set_manager(r_hit.collider.gameObject);
-        if (cur_manager != null)
-            deselect_manager();
+        //if (cur_manager != null)
+        //    deselect_manager();
         ws = r_hit.collider.GetComponent<Worker_Stats>();
         ws.show_stats();
         //track_player(cur_manager);
         //track_player(r_hit.collider.gameObject);
-        IEnumerator enumer = attach_worker_to_mouse(worker);
+        IEnumerator enumer = attach_to_mouse(worker);
         StartCoroutine(enumer);
         yield return new WaitUntil(() => !Input.GetMouseButton(0));
         StopCoroutine(enumer);
@@ -82,7 +65,7 @@ public class Select_Manager : MonoBehaviour {
         get_new_assignment(worker);
     }
 
-    IEnumerator attach_worker_to_mouse(GameObject worker)
+    IEnumerator attach_to_mouse(GameObject worker)
     {
         while(true)
         {
@@ -119,6 +102,46 @@ public class Select_Manager : MonoBehaviour {
     }
 
 
+
+
+    IEnumerator pick_up_tag(GameObject control_tag)
+    {
+
+        IEnumerator enumer = attach_to_mouse(control_tag);
+        StartCoroutine(enumer);
+        yield return new WaitUntil(() => !Input.GetMouseButton(0));
+        StopCoroutine(enumer);
+
+        get_new_destination(control_tag);
+        //show item name and all the possible things it can be turned into???
+
+    }
+
+    private void get_new_destination(GameObject control_tag)
+    {
+        RaycastHit2D rh2_hit = Physics2D.Raycast(control_tag.transform.position, Vector2.zero, 0f, ~(1 << 10));
+        GameObject new_destination = null;
+        print(rh2_hit.collider);
+        if (rh2_hit.collider != null)
+        {
+            if (rh2_hit.collider.tag == "Truck" || rh2_hit.collider.tag == "Station")
+                new_destination = rh2_hit.collider.gameObject;               
+            
+            //else if (rh2_hit.collider.tag == "Storage")
+            //{
+            //    to_return = "Storage";
+            //    new_assignment_gameobject = rh2_hit.collider.gameObject;
+            //}
+        }
+        if (new_destination != null)
+        {
+            control_tag.transform.position = new Vector2(new_destination.transform.position.x, new_destination.transform.position.y + 0.5f);
+            control_tag.GetComponent<Tag_Controller>().destination = new_destination;
+
+        }
+        else
+            Destroy(control_tag);
+    }
 
 
 

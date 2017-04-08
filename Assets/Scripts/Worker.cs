@@ -37,11 +37,8 @@ public class Worker : MonoBehaviour {
             obj.transform.position = gameObject.transform.position;
             obj.transform.parent = item_parent;
         }
-        else if (dest.transform.parent != null)
-        {
-            if (dest.transform.parent.tag == "Truck")
-                dest.transform.parent.GetComponent<Truck_Controller>().add_box(1, 1, obj);
-        }
+        else if (dest.transform.tag == "Truck")
+                dest.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
         else if (dest.tag == "Station")
                 dest.transform.GetComponent<Station_Controller>().add_item(obj);
         else

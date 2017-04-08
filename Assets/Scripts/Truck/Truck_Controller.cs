@@ -9,7 +9,6 @@ public class Truck_Controller : MonoBehaviour {
     public Sprite covered, uncovered;
     private SpriteRenderer current;
     private SpriteRenderer load_spot_sprite;
-    public GameObject load_spot;
     public float x_space, y_space, max_vel, accel, wait_time;
     public int cur_boxes_index = 0, max_size;
     private GameObject[] boxes;
@@ -20,23 +19,24 @@ public class Truck_Controller : MonoBehaviour {
 
     void Start()
     {
-        init_location = new Vector2(transform.position.x + 2.35f, transform.position.y + 0.5f);
+        init_location = new Vector2(transform.parent.position.x + 2.35f, transform.parent.position.y + 0.5f);
         max_size = spaces_x * spaces_y;
         boxes = new GameObject[max_size];
-        rb = GetComponent<Rigidbody2D>();
-        current = GetComponent<SpriteRenderer>();
-        original = transform.position.x;
+        rb = transform.parent.GetComponent<Rigidbody2D>();
+        current = transform.parent.GetComponent<SpriteRenderer>();
+        original = transform.parent.position.x;
         target_x = original + 20;
 
     }
 
     public void add_box(int size_x, int size_y, GameObject box)
     {
+
         if (current.sprite != uncovered)
             current.sprite = uncovered;
         if (cur_boxes_index < (spaces_x * spaces_y))
         {
-            box.transform.parent = gameObject.transform;
+            box.transform.parent = transform.parent;
 
             int x_offset = cur_boxes_index / spaces_y;
             int y_offset = cur_boxes_index % spaces_y;
@@ -57,15 +57,15 @@ public class Truck_Controller : MonoBehaviour {
 
     IEnumerator send_truck()
     {
-        Transform old_parent = transform.parent;
-        transform.parent = null;
-        load_spot_sprite = load_spot.GetComponent<SpriteRenderer>();
+        Transform old_parent = transform.parent.parent;
+        transform.parent.parent = null;
+        load_spot_sprite = GetComponent<SpriteRenderer>();
         while (load_spot_sprite.color.a > 0)
         {
             load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a - 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
-        load_spot.SetActive(false);
+        gameObject.SetActive(false);
 
         while (transform.position.x < target_x)
         {
@@ -86,24 +86,24 @@ public class Truck_Controller : MonoBehaviour {
             Destroy(box);
         
         rb.velocity = -fast;
-        while (transform.position.x > original)
+        while (transform.parent.position.x > original)
         {
             if(rb.velocity.x < -1f)
                 rb.velocity += new Vector2(accel/1.1f * Time.deltaTime, 0);
 
             yield return new WaitForSeconds(0.1f);
         }
-        if (transform.position.x != original)
-            transform.position = new Vector3(original, transform.position.y, 0);
+        if (transform.parent.position.x != original)
+            transform.parent.position = new Vector3(original, transform.parent.position.y, 0);
         rb.velocity = Vector2.zero;
 
-        load_spot.SetActive(true);
+        gameObject.SetActive(true);
         while (load_spot_sprite.color.a < 1)
         {
             load_spot_sprite.color = new Color(load_spot_sprite.color.r, load_spot_sprite.color.g, load_spot_sprite.color.b, load_spot_sprite.color.a + 0.02f);
             yield return new WaitForSeconds(0.001f);
         }
-        transform.parent = old_parent;
+        transform.parent.parent = old_parent;
     }
 
 
