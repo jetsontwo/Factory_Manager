@@ -11,17 +11,19 @@ public class Truck_Controller : MonoBehaviour {
     private SpriteRenderer load_spot_sprite;
     public float x_space, y_space, max_vel, accel, wait_time;
     public int cur_boxes_index = 0, max_size;
-    private GameObject[] boxes;
+    private GameObject[] items;
     private Vector2 init_location;
     private Rigidbody2D rb;
     private float target_x, original;
     public Money_Controller mc;
+    private bool is_at_port = true;
+    private int items_inside = 0;
 
     void Start()
     {
         init_location = new Vector2(transform.parent.position.x + 2.35f, transform.parent.position.y + 0.5f);
         max_size = spaces_x * spaces_y;
-        boxes = new GameObject[max_size];
+        items = new GameObject[max_size];
         rb = transform.parent.GetComponent<Rigidbody2D>();
         current = transform.parent.GetComponent<SpriteRenderer>();
         original = transform.parent.position.x;
@@ -29,29 +31,24 @@ public class Truck_Controller : MonoBehaviour {
 
     }
 
-    public void add_box(int size_x, int size_y, GameObject box)
+    public void add_box(int[] location, GameObject box)
     {
 
         if (current.sprite != uncovered)
             current.sprite = uncovered;
-        if (cur_boxes_index < (spaces_x * spaces_y))
-        {
-            box.transform.parent = transform.parent;
 
-            int x_offset = cur_boxes_index / spaces_y;
-            int y_offset = cur_boxes_index % spaces_y;
+        box.transform.parent = transform.parent;
 
-            box.transform.position = new Vector2(init_location.x - (x_offset * x_space), init_location.y - (y_offset * y_space));
-            boxes[cur_boxes_index] = box;
-            cur_boxes_index++;
-        }
-        if (cur_boxes_index == (spaces_x * spaces_y))
+        box.transform.position = new Vector2(init_location.x - (location[0] * x_space), init_location.y - (location[1] * y_space));
+        items_inside++;
+        if (items_inside == max_size)
             send();
     }
 
     public void send()
     {
         current.sprite = covered;
+        is_at_port = false;
         StartCoroutine(send_truck());
     }
 
@@ -82,7 +79,7 @@ public class Truck_Controller : MonoBehaviour {
 
         mc.add_cash(cur_boxes_index * 10);    // need the box prices here
         cur_boxes_index = 0;
-        foreach (GameObject box in boxes)
+        foreach (GameObject box in items)
             Destroy(box);
         
         rb.velocity = -fast;
@@ -104,14 +101,37 @@ public class Truck_Controller : MonoBehaviour {
             yield return new WaitForSeconds(0.001f);
         }
         transform.parent.parent = old_parent;
+        is_at_port = true;
+    }
+
+    public bool wait_to_return()
+    {
+        return is_at_port;
     }
 
 
     private void sell_boxes()
     {
-        foreach(GameObject obj in boxes)
+        foreach(GameObject obj in items)
         {
 
         }
+    }
+
+    public int[] queue_item(GameObject item)
+    {
+        Item_ID id = item.GetComponent<Item_ID>();
+
+        if (cur_boxes_index == (spaces_x * spaces_y))
+            return new int[] { -1, -1};
+
+        int x_offset = (cur_boxes_index) / spaces_y;
+        int y_offset = (cur_boxes_index) % spaces_y;
+
+
+        items[cur_boxes_index] = item;
+        cur_boxes_index++;
+        //Need to check that size of item fits in the truck
+        return new int[] { x_offset, y_offset };
     }
 }

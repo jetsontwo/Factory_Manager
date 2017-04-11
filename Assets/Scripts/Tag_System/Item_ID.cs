@@ -7,4 +7,5 @@ public class Item_ID : MonoBehaviour {
     public string item_name;
     public int ID;
     public float chance;
+    public int x_size, y_size;
 }

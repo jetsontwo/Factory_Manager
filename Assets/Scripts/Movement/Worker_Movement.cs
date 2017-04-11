@@ -126,6 +126,14 @@ public class Worker_Movement : MonoBehaviour {
     }
 
 
+    /////////////////////////////////////////////////  ASSIGNED TO DROPOFF ////////////////////////////////////////////////////
+
+    public IEnumerator move_items_to_dropoff()
+    {
+        yield return new WaitForSeconds(1f);
+        //Either moves the item from the stations to storage or the dropoff, uses same request system
+    }
+
 
     /////////////////////////////////////////////////   HELPER FUNCTIONS    ///////////////////////////////////////////////////
 
@@ -160,9 +168,17 @@ public class Worker_Movement : MonoBehaviour {
 
         if (tag_dest != null)
         {
+            int[] location = null;
+            if (tag_dest.tag == "Truck")
+            {
+                Truck_Controller tc = tag_dest.GetComponent<Truck_Controller>();
+                location = tc.queue_item(item);
+                if (location[0] < 0)
+                    yield return new WaitUntil(tc.wait_to_return);
+            }
             StartCoroutine(move.go_to_pos(tag_dest.transform.position));
             yield return new WaitUntil(move.at_pos);
-            work.drop_item(item, tag_dest.gameObject);
+            work.drop_item(item, tag_dest.gameObject, location);
             StartCoroutine(Go_to_Trash());
         }
         else

@@ -26,7 +26,7 @@ public class Worker : MonoBehaviour {
     //    holding = true;
     //}
 
-    public void drop_item(GameObject obj, GameObject dest)
+    public void drop_item(GameObject obj, GameObject dest, int[] location = null)
     {
         source.clip = drop;
         source.Play();
@@ -38,7 +38,7 @@ public class Worker : MonoBehaviour {
             obj.transform.parent = item_parent;
         }
         else if (dest.transform.tag == "Truck")
-                dest.transform.GetComponent<Truck_Controller>().add_box(1, 1, obj);
+                dest.transform.GetComponent<Truck_Controller>().add_box(location, obj);
         else if (dest.tag == "Station")
                 dest.transform.GetComponent<Station_Controller>().add_item(obj);
         else
