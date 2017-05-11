@@ -11,10 +11,10 @@ public class Camera_Track_Mouse : MonoBehaviour {
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        mouse_x_max = Screen.width - Screen.width / 10;
-        mouse_x_min = Screen.width / 10;
-        mouse_y_max = Screen.height - Screen.height / 8;
-        mouse_y_min = Screen.height / 8;
+        mouse_x_max = Screen.width - Screen.width / 14;
+        mouse_x_min = Screen.width / 14;
+        mouse_y_max = Screen.height - Screen.height / 12;
+        mouse_y_min = Screen.height / 12;
     }
 	
 	// Update is called once per frame

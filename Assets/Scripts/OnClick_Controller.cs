@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityScript;
 
-public class Select_Manager : MonoBehaviour {
+public class OnClick_Controller : MonoBehaviour {
 
 
     public GameObject cur_manager = null;
@@ -103,8 +104,7 @@ public class Select_Manager : MonoBehaviour {
 
 
 
-
-    IEnumerator pick_up_tag(GameObject control_tag)
+    public IEnumerator pick_up_tag(GameObject control_tag)
     {
 
         IEnumerator enumer = attach_to_mouse(control_tag);
@@ -112,6 +112,7 @@ public class Select_Manager : MonoBehaviour {
         yield return new WaitUntil(() => !Input.GetMouseButton(0));
         StopCoroutine(enumer);
 
+        Selection.activeGameObject = null;
         get_new_destination(control_tag);
         //show item name and all the possible things it can be turned into???
 
