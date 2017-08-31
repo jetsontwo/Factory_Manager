@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityScript;
 
 public class OnClick_Controller : MonoBehaviour {
 
@@ -112,7 +111,7 @@ public class OnClick_Controller : MonoBehaviour {
         yield return new WaitUntil(() => !Input.GetMouseButton(0));
         StopCoroutine(enumer);
 
-        Selection.activeGameObject = null;
+        //Selection.activeGameObject = null;
         get_new_destination(control_tag);
         //show item name and all the possible things it can be turned into???
 
